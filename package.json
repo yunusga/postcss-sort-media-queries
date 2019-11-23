@@ -19,7 +19,8 @@
   "license": "MIT",
   "repository": "yunusga/postcss-sort-media-queries",
   "dependencies": {
-    "postcss": "^7.0.23"
+    "postcss": "^7.0.23",
+    "sort-css-media-queries": "1.4.3"
   },
   "devDependencies": {
     "@logux/eslint-config": "^34.0.1",
