@@ -12,7 +12,7 @@
 
 [PostCSS] plugin for combine and sort CSS media queries with **mobile first** or **desktop first** methods.
 
-> **Combine** same media queries is a unexpected side effect for this plugin 🧬
+> **Combine** same media queries into one - is a unexpected side effect for this plugin 🧬
 
 ## Examples
 
