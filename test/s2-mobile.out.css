@@ -1,0 +1,6 @@
+@media screen and (min-width: 1280px) {
+  .s2m { color: #cfcfcf } }
+@media screen and (max-width: 640px) {
+  .s2m1 { color: #cfcfcf }
+  .s2m2 { color: #cfcfcf }
+  .s2m3 { color: #cfcfcf } }

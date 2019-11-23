@@ -1,0 +1,30 @@
+@media tv {
+  .mm { color: #fff }
+}
+@media print and (orientation: landscape) {
+  .mm { color: #fff }
+}
+@media screen and (min-width: 1280px) {
+  .mm { color: #fff }
+}
+@media screen and (max-width: 640px) {
+  .mm { color: #fff }
+}
+@media screen and (orientation: landscape) {
+  .mm { color: #fff }
+}
+@media print {
+  .mm { color: #fff }
+}
+@media screen and (orientation: portrait) {
+  .mm { color: #fff }
+}
+@media screen and (min-width: 768px) {
+  .mm { color: #fff }
+}
+@media screen and (max-width: 1280px) {
+  .mm { color: #fff }
+}
+@media print and (orientation: portrait) {
+  .mm { color: #fff }
+}

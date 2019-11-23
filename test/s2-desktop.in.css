@@ -1,0 +1,12 @@
+@media screen and (max-width: 640px) {
+  .s2d1 { color: #cdcdcd }
+}
+@media screen and (max-width: 640px) {
+  .s2d2 { color: #cdcdcd }
+}
+@media screen and (min-width: 1280px) {
+  .s2d { color: #cdcdcd }
+}
+@media screen and (max-width: 640px) {
+  .s2d3 { color: #cdcdcd }
+}
