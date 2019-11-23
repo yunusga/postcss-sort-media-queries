@@ -1,6 +1,10 @@
+@media screen and (max-width: 760px) {
+  .footer { color: #cdcdcd } }
 @media screen and (max-width: 640px) {
-  .s2d1 { color: #cdcdcd }
-  .s2d2 { color: #cdcdcd }
-  .s2d3 { color: #cdcdcd } }
+  .header { color: #cdcdcd }
+  .main { color: #cdcdcd }
+  .footer { color: #cdcdcd } }
+@media screen and (min-width: 760px) {
+  .desktop-first { color: #cdcdcd } }
 @media screen and (min-width: 1280px) {
-  .s2d { color: #cdcdcd } }
+  .desktop-first { color: #cdcdcd } }

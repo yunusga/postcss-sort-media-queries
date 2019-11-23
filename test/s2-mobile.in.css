@@ -1,12 +1,18 @@
 @media screen and (max-width: 640px) {
-  .s2m1 { color: #cfcfcf }
+  .head { color: #cfcfcf }
+}
+@media screen and (max-width: 768px) {
+  .footer { color: #cfcfcf }
 }
 @media screen and (max-width: 640px) {
-  .s2m2 { color: #cfcfcf }
+  .main { color: #cfcfcf }
 }
 @media screen and (min-width: 1280px) {
-  .s2m { color: #cfcfcf }
+  .mobile-first { color: #cfcfcf }
+}
+@media screen and (min-width: 640px) {
+  .mobile-first { color: #cfcfcf }
 }
 @media screen and (max-width: 640px) {
-  .s2m3 { color: #cfcfcf }
+  .footer { color: #cfcfcf }
 }
