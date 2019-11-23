@@ -13,6 +13,6 @@
 @media screen and (min-width: 640px) {
   .mobile-first { color: #cfcfcf }
 }
-@media screen and (max-width: 640px) {
+@media (max-width: 640px) {
   .footer { color: #cfcfcf }
 }

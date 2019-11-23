@@ -4,7 +4,8 @@
   .mobile-first { color: #cfcfcf } }
 @media screen and (max-width: 768px) {
   .footer { color: #cfcfcf } }
+@media (max-width: 640px) {
+  .footer { color: #cfcfcf } }
 @media screen and (max-width: 640px) {
   .head { color: #cfcfcf }
-  .main { color: #cfcfcf }
-  .footer { color: #cfcfcf } }
+  .main { color: #cfcfcf } }
