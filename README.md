@@ -7,8 +7,8 @@
 [official docs]:    https://github.com/postcss/postcss#usage
 [Releases history]: https://github.com/solversgroup/postcss-sort-media-queries/blob/master/CHANGELOG.md
 
-[![npm](https://img.shields.io/npm/v/postcsspostcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcsspostcss-sort-media-queries) [![Build Status][ci-img]][ci]
-[![npm](https://img.shields.io/npm/dt/postcsspostcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcsspostcss-sort-media-queries)
+[![npm](https://img.shields.io/npm/v/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries) [![Build Status][ci-img]][ci]
+[![npm](https://img.shields.io/npm/dt/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries)
 
 [PostCSS] plugin for combine and sort CSS media queries with **mobile first** or **desktop first** methods.
 
