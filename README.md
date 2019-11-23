@@ -10,7 +10,7 @@
 [![npm](https://img.shields.io/npm/v/postcsspostcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcsspostcss-sort-media-queries) [![Build Status][ci-img]][ci]
 [![npm](https://img.shields.io/npm/dt/postcsspostcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcsspostcss-sort-media-queries)
 
-[PostCSS] plugin for combine and sorting CSS media queries with **mobile first** or **desktop first** methods.
+[PostCSS] plugin for combine and sort CSS media queries with **mobile first** or **desktop first** methods.
 
 > **Combine** same media queries is a unexpected side effect for this plugin 🧬
 
