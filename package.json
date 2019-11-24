@@ -17,7 +17,11 @@
   },
   "author": "Yunus Gaziev <yunusga@yandex.ru>",
   "license": "MIT",
-  "repository": "yunusga/postcss-sort-media-queries",
+  "repository": "solversgroup/postcss-sort-media-queries",
+  "bugs": {
+    "url": "https://github.com/solversgroup/postcss-sort-media-queries/issues"
+  },
+  "homepage": "https://github.com/solversgroup/postcss-sort-media-queries",
   "dependencies": {
     "postcss": "^7.0.23",
     "sort-css-media-queries": "1.4.3"
