@@ -2,6 +2,10 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.0.5
+
+- Update `repository`, `bugs`, `homepage` urls in package.json
+
 ## 1.0.4
 
 - Add linux and osx os for Travis CI
