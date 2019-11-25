@@ -161,6 +161,21 @@ postcss([
 ]).process(css);
 ```
 
+#### Custom sort function
+```js
+postcss([
+  sortMediaQueries({
+    function(a, b) {
+      return a.localeCompare(b);
+    }
+  })
+]).process(css);
+```
+
+In this example, all your media queries will sort by A-Z order.
+
+This sorting function is directly passed to Array#sort() method of an array of all your media queries.
+
 ## Changelog
 
 See [Releases history]
