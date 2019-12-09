@@ -5,18 +5,27 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.13] - 2019-12-09
+
+### Bumps
+ - postcss from 7.0.23 to 7.0.24
+ - eslint-plugin-import from 2.18.2 to 2.19.0
+ - eslint from 6.7.1 to 6.7.2
+ - eslint-plugin-jest from 23.0.5 to 23.1.1
+
 ## [1.0.9] - 2019-10-29
 
 ### Bumps
-  - @logux/eslint-config from 34.0.1 to 35.0.0
-  - sort-css-media-queries from 1.4.3 to 1.5.0
+
+ - @logux/eslint-config from 34.0.1 to 35.0.0
+ - sort-css-media-queries from 1.4.3 to 1.5.0
 
 ## [1.0.7] - 2019-10-25
 
 ### Bumps
 
-  - eslint from 6.7.0 to 6.7.1
-  - eslint-plugin-jest from 23.0.4 to 23.0.5
+ - eslint from 6.7.0 to 6.7.1
+ - eslint-plugin-jest from 23.0.4 to 23.0.5
 
 ## [1.0.5] - 2019-10-25
 
