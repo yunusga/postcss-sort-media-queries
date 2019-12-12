@@ -5,9 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.15] - 2019-12-12
+
+### Added
+
+ - `test/`, `index.test.js` to .npmignore to reduce package size
+
+### Bumps
+
+ - eslint-plugin-import from 2.19.0 to 2.19.1
+
 ## [1.0.13] - 2019-12-09
 
 ### Bumps
+
  - postcss from 7.0.23 to 7.0.24
  - eslint-plugin-import from 2.18.2 to 2.19.0
  - eslint from 6.7.1 to 6.7.2
