@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.16] - 2020-01-28
+
+### Bumps
+
+ - postcss `^7.0.23` → `^7.0.26`
+ - @logux/eslint-config `^35.0.0` → `^35.0.3`
+ - eslint `^6.7.0` → `^6.8.0`
+ - eslint-plugin-import `^2.18.2` → `^2.20.0`
+ - eslint-plugin-jest `^23.0.4` → `^23.6.0`
+ - eslint-plugin-node `^10.0.0` → `^11.0.0`
+ - eslint-plugin-unicorn `^13.0.0` → `^15.0.1`
+ - jest `^24.9.0` → `^25.1.0`
+
 ## [1.0.15] - 2019-12-12
 
 ### Added
