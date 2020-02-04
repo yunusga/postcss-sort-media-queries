@@ -1,11 +1,11 @@
 # PostCSS Sort Media Queries
 
 [PostCSS]:          https://github.com/postcss/postcss
-[ci-img]:           https://travis-ci.org/solversgroup/postcss-sort-media-queries.svg
-[ci]:               https://travis-ci.org/solversgroup/postcss-sort-media-queries
-[MIT]:              https://github.com/solversgroup/postcss-sort-media-queries/blob/master/LICENSE
+[ci-img]:           https://travis-ci.org/yunusga/postcss-sort-media-queries.svg
+[ci]:               https://travis-ci.org/yunusga/postcss-sort-media-queries
+[MIT]:              https://github.com/yunusga/postcss-sort-media-queries/blob/master/LICENSE
 [official docs]:    https://github.com/postcss/postcss#usage
-[Releases history]: https://github.com/solversgroup/postcss-sort-media-queries/blob/master/CHANGELOG.md
+[Releases history]: https://github.com/yunusga/postcss-sort-media-queries/blob/master/CHANGELOG.md
 
 [![npm](https://img.shields.io/npm/v/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries) [![Build Status][ci-img]][ci]
 [![npm](https://img.shields.io/npm/dt/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries)
@@ -191,4 +191,4 @@ See [Releases history]
 
 ## Other PostCSS plugins
 
-- [`momentum-scrolling`](https://github.com/solversgroup/postcss-momentum-scrolling) - plugin for adding **momentum** style scrolling behavior (`-webkit-overflow-scrolling:touch`) for elements with overflow (scroll, auto) on iOS
+- [`postcss-momentum-scrolling`](https://github.com/yunusga/postcss-momentum-scrolling) - plugin for adding **momentum** style scrolling behavior (`-webkit-overflow-scrolling:touch`) for elements with overflow (scroll, auto) on iOS
