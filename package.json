@@ -13,7 +13,7 @@
     "optimization"
   ],
   "scripts": {
-    "test": "jest && eslint ."
+    "test": "jest && eslint . --fix"
   },
   "author": "Yunus Gaziev <yunusga@yandex.ru>",
   "license": "MIT",
