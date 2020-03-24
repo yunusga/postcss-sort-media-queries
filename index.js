@@ -10,7 +10,9 @@ module.exports = postcss.plugin('postcss-sort-media-queries', (opts = { }) => {
     let atRules = {}
 
     function sortAtRules (queries, sort) {
-      if (typeof sort !== 'function') sort = (sort === 'desktop-first') ? sortCSSmq.desktopFirst : sortCSSmq
+      if (typeof sort !== 'function') {
+        sort = (sort === 'desktop-first') ? sortCSSmq.desktopFirst : sortCSSmq
+      }
 
       return queries.sort(sort)
     }
