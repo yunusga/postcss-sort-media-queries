@@ -186,6 +186,7 @@ See [Releases history]
 
 ## Thanks 💪
 
+- Dmytro Symonov [@Kassaila](https://github.com/Kassaila)
 - Kai Falkowski [@SassNinja](https://github.com/SassNinja)
 - Олег Дутченко [@dutchenkoOleg](https://github.com/dutchenkoOleg)
 
