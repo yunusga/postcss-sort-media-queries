@@ -1,6 +1,6 @@
 let fs = require('fs')
-
 let postcss = require('postcss')
+
 let plugin = require('./')
 
 async function run (input, output, opts) {
