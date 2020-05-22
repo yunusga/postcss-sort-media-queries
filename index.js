@@ -1,17 +1,20 @@
 let postcss = require('postcss')
 const sortCSSmq = require('sort-css-media-queries')
 
-module.exports = postcss.plugin('postcss-sort-media-queries', (opts = { }) => {
-  opts = Object.assign({
-    sort: 'mobile-first'
-  }, opts)
+module.exports = postcss.plugin('postcss-sort-media-queries', (opts = {}) => {
+  opts = Object.assign(
+    {
+      sort: 'mobile-first'
+    },
+    opts
+  )
 
   return root => {
     let atRules = {}
 
     function sortAtRules (queries, sort) {
       if (typeof sort !== 'function') {
-        sort = (sort === 'desktop-first') ? sortCSSmq.desktopFirst : sortCSSmq
+        sort = sort === 'desktop-first' ? sortCSSmq.desktopFirst : sortCSSmq
       }
 
       return queries.sort(sort)
