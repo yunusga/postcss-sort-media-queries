@@ -30,13 +30,13 @@
     "sort-css-media-queries": "1.5.0"
   },
   "devDependencies": {
-    "@logux/eslint-config": "^39.0.3",
+    "@logux/eslint-config": "^40.0.0",
     "eslint": "^7.4.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prefer-let": "^1.0.1",
+    "eslint-plugin-prefer-let": "^1.0.2",
     "eslint-plugin-prettierx": "^0.12.1",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-security": "^1.4.0",
