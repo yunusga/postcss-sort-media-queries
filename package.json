@@ -30,19 +30,19 @@
     "sort-css-media-queries": "1.5.0"
   },
   "devDependencies": {
-    "@logux/eslint-config": "^40.0.0",
-    "eslint": "^7.4.0",
+    "@logux/eslint-config": "^40.0.3",
+    "eslint": "^7.6.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prefer-let": "^1.0.2",
-    "eslint-plugin-prettierx": "^0.12.1",
+    "eslint-plugin-prettierx": "^0.14.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-security": "^1.4.0",
     "eslint-plugin-standard": "^4.0.1",
-    "eslint-plugin-unicorn": "^20.1.0",
-    "jest": "^26.1.0"
+    "eslint-plugin-unicorn": "^21.0.0",
+    "jest": "^26.3.0"
   },
   "eslintConfig": {
     "extends": "@logux/eslint-config"
