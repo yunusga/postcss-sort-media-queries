@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/yunusga/postcss-sort-media-queries",
   "dependencies": {
-    "postcss": "^7.0.32",
     "sort-css-media-queries": "1.5.0"
   },
   "devDependencies": {
@@ -43,6 +42,9 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-unicorn": "^21.0.0",
     "jest": "^26.3.0"
+  },
+  "peerDependencies": {
+    "postcss": "^8.0.9"
   },
   "eslintConfig": {
     "extends": "@logux/eslint-config"
