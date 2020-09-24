@@ -101,7 +101,7 @@
 First thing's, install the module:
 
 ```
-npm install postcss-sort-media-queries --save-dev
+npm install postcss postcss-sort-media-queries --save-dev
 ```
 
 ## 🍳 Usage
