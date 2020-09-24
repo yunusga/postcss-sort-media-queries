@@ -7,3 +7,4 @@ yarn.lock
 
 test/
 index.test.js
+coverage/
