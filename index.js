@@ -1,4 +1,3 @@
-let postcss = require('postcss')
 const sortCSSmq = require('sort-css-media-queries')
 
 module.exports = (opts = {}) => {
@@ -23,13 +22,14 @@ module.exports = (opts = {}) => {
       }
       return {
         AtRule: {
-          media: atRule => {
+          media: (atRule, { AtRule }) => {
             let query = atRule.params
 
             if (!atRules[query]) {
-              atRules[query] = postcss.atRule({
+              atRules[query] = new AtRule({
                 name: atRule.name,
-                params: atRule.params
+                params: atRule.params,
+                source: atRule.source
               })
             }
 
@@ -40,7 +40,7 @@ module.exports = (opts = {}) => {
             atRule.remove()
           }
         },
-        RootExit (root) {
+        OnceExit (root) {
           sortAtRules(Object.keys(atRules), opts.sort).forEach(query => {
             root.append(atRules[query])
           })
