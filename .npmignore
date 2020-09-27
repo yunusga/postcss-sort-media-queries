@@ -4,7 +4,10 @@ yarn.lock
 *.test.js
 .travis.yml
 .editorconfig
+.gitattributes
+index.test.js
+
+CHANGELOG.md
 
 test/
-index.test.js
 coverage/
