@@ -184,13 +184,14 @@ See [Releases history]
 
 [MIT]
 
+## Other PostCSS plugins
+
+- [`postcss-momentum-scrolling`](https://github.com/yunusga/postcss-momentum-scrolling) - plugin for adding **momentum** style scrolling behavior (`-webkit-overflow-scrolling:touch`) for elements with overflow (scroll, auto) on iOS
+
 ## Thanks 💪
 
+- Andrey Sitnik [@ai](https://github.com/ai)
 - Jakub Caban [@Lustmored](https://github.com/Lustmored)
 - Dmytro Symonov [@Kassaila](https://github.com/Kassaila)
 - Kai Falkowski [@SassNinja](https://github.com/SassNinja)
 - Олег Дутченко [@dutchenkoOleg](https://github.com/dutchenkoOleg)
-
-## Other PostCSS plugins
-
-- [`postcss-momentum-scrolling`](https://github.com/yunusga/postcss-momentum-scrolling) - plugin for adding **momentum** style scrolling behavior (`-webkit-overflow-scrolling:touch`) for elements with overflow (scroll, auto) on iOS
