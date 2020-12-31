@@ -40,10 +40,10 @@
     "jest-ci": "^0.1.1",
     "jest-cli": "^26.6.3",
     "lint-staged": "^10.5.3",
-    "postcss": "^8.2.1"
+    "postcss": "^8.2.2"
   },
   "peerDependencies": {
-    "postcss": "^8.2.1"
+    "postcss": "^8.2.2"
   },
   "husky": {
     "hooks": {
