@@ -1,10 +1,17 @@
 let fs = require('fs')
 let postcss = require('postcss')
+let nested = require('postcss-nested')
 
 let plugin = require('./')
 
 async function run (input, output, opts) {
   let result = await postcss([plugin(opts)]).process(input, { from: undefined })
+  expect(result.css).toEqual(output)
+  expect(result.warnings()).toHaveLength(0)
+}
+
+async function nestedRun (input, output, opts) {
+  let result = await postcss([nested, plugin(opts)]).process(input, { from: undefined })
   expect(result.css).toEqual(output)
   expect(result.warnings()).toHaveLength(0)
 }
@@ -55,4 +62,10 @@ it('mixed #1. desktop-first', async () => {
   let input = fs.readFileSync('./test/mixed-desktop.in.css', 'utf8')
   let output = fs.readFileSync('./test/mixed-desktop.out.css', 'utf8')
   await run(input, output, { sort: 'desktop-first' })
+})
+
+it('postcss nested', async () => {
+  let input = fs.readFileSync('./test/postcss.nested.in.css', 'utf8')
+  let output = fs.readFileSync('./test/postcss.nested.out.css', 'utf8')
+  await nestedRun(input, output)
 })
