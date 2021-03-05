@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.6.5] 2021-03-05
+
+- Update **postcss** to [postcss/releases/tag/8.2.7](https://github.com/postcss/postcss/releases/tag/8.2.7)
+- Update **sort-css-media-queries** to [1.5.4 Bugfix](https://github.com/dutchenkoOleg/sort-css-media-queries/releases/tag/1.5.4)
+- Update dev dependencies
+
 ## [3.4.3] 2021-02-11
 
 - Update **postcss** to [postcss/releases/tag/8.2.6](https://github.com/postcss/postcss/releases/tag/8.2.6)
