@@ -1,10 +1,12 @@
 .postcss-nested li {
     right: var(--margin-default);
   }
-  .postcss-nested li img {
+
+    .postcss-nested li img {
       margin-right: var(--margin-default);
     }
-  @media (min-width: 320px) {
+
+    @media (min-width: 320px) {
 
     .postcss-nested li span {
         top: var(--margin-320)
@@ -14,8 +16,8 @@
         bottom: var(--margin-320)
     }
 }
-  @media (min-width: 640px) {
-  .postcss-nested li {
+
+    @media (min-width: 640px) {.postcss-nested li {
       right: var(--margin-640)
   }
 
