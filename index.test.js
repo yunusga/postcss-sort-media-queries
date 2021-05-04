@@ -1,6 +1,9 @@
 let fs = require('fs')
 let postcss = require('postcss')
 let nested = require('postcss-nested')
+let mediaMinMax = require('postcss-media-minmax')
+let autoprefixer = require('autoprefixer')
+let flexbugsFixes = require('postcss-flexbugs-fixes')
 
 let plugin = require('./')
 
@@ -12,6 +15,18 @@ async function run (input, output, opts) {
 
 async function nestedRun (input, output, opts) {
   let result = await postcss([nested, plugin(opts)]).process(input, { from: undefined })
+  expect(result.css).toEqual(output)
+  expect(result.warnings()).toHaveLength(0)
+}
+
+async function mediaMinmaxBeforeNestedRun (input, output, opts) {
+  let result = await postcss([autoprefixer, flexbugsFixes, mediaMinMax, nested, plugin(opts)]).process(input, { from: undefined })
+  expect(result.css).toEqual(output)
+  expect(result.warnings()).toHaveLength(0)
+}
+
+async function mediaMinmaxAfterNestedRun (input, output, opts) {
+  let result = await postcss([autoprefixer, flexbugsFixes, nested, mediaMinMax, plugin(opts)]).process(input, { from: undefined })
   expect(result.css).toEqual(output)
   expect(result.warnings()).toHaveLength(0)
 }
@@ -68,4 +83,16 @@ it('postcss nested', async () => {
   let input = fs.readFileSync('./test/postcss.nested.in.css', 'utf8')
   let output = fs.readFileSync('./test/postcss.nested.out.css', 'utf8')
   await nestedRun(input, output)
+})
+
+it('postcss media minmax -> nested', async () => {
+  let input = fs.readFileSync('./test/postcss.media.minmax.in.css', 'utf8')
+  let output = fs.readFileSync('./test/postcss.media.minmax.out.css', 'utf8')
+  await mediaMinmaxBeforeNestedRun(input, output)
+})
+
+it('postcss nested -> media minmax', async () => {
+  let input = fs.readFileSync('./test/postcss.media.minmax.in.css', 'utf8')
+  let output = fs.readFileSync('./test/postcss.media.minmax.out.css', 'utf8')
+  await mediaMinmaxAfterNestedRun(input, output)
 })

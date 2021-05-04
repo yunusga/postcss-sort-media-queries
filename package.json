@@ -41,6 +41,8 @@
     "jest-cli": "^26.6.3",
     "lint-staged": "^10.5.4",
     "postcss": "^8.2.10",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-media-minmax": "^5.0.0",
     "postcss-nested": "^5.0.5"
   },
   "peerDependencies": {
