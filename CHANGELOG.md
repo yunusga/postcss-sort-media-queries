@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.9.10] 2021-05-03
+
+- Update **postcss** to [postcss/releases/tag/8.2.13](https://github.com/postcss/postcss/releases/tag/8.2.13)
+  - Fixed ReDoS vulnerabilities in source map parsing
+- Update dev dependencies
+- Added tests with media-minmax and flexbugs-fixes
+
 ## [3.8.9] 2021-04-12
 
 - Update **postcss** to [postcss/releases/tag/8.2.10](https://github.com/postcss/postcss/releases/tag/8.2.10)
