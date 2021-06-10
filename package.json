@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/solversgroup/postcss-sort-media-queries",
   "scripts": {
-    "test": "jest-ci --coverage && eslint-ci ."
+    "test": "jest-ci --coverage && eslint-ci .",
+    "refresh-deps": "rm -rf node_modules && rm package-lock.json && npm i"
   },
   "engines": {
     "node": ">=10.0.0"
@@ -32,22 +33,22 @@
     "sort-css-media-queries": "1.5.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
-    "eslint": "^7.26.0",
+    "autoprefixer": "^10.2.6",
+    "eslint": "^7.28.0",
     "eslint-ci": "^1.0.0",
     "eslint-plugin-jest": "^24.3.6",
     "husky": "^6.0.0",
-    "jest": "^26.6.3",
+    "jest": "^27.0.4",
     "jest-ci": "^0.1.1",
-    "jest-cli": "^26.6.3",
+    "jest-cli": "^27.0.4",
     "lint-staged": "^11.0.0",
-    "postcss": "^8.2.15",
+    "postcss": "^8.3.1",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-media-minmax": "^5.0.0",
     "postcss-nested": "^5.0.5"
   },
   "peerDependencies": {
-    "postcss": "^8.2.15"
+    "postcss": "^8.3.1"
   },
   "husky": {
     "hooks": {
