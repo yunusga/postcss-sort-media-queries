@@ -7,8 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [WIP] XXXX-XX-XX
 
-- Update **postcss** to [postcss/releases/tag/8.3.5](https://github.com/postcss/postcss/releases/tag/8.3.5)
-  - Fixed broken AST detection
+- Update **postcss** to [8.3.6](https://github.com/postcss/postcss/releases/tag/8.3.6)
+  - Fixed column in `missed semicolon` error (by @Gusted).
+- Update **sort-css-media-queries** to [v2.0.4](https://github.com/dutchenkoOleg/sort-css-media-queries/releases/tag/v2.0.4)
+  - Fix package dependencies
 - Update dev dependencies
 - Fixed dependencies vulnerabilities
 
