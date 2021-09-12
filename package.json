@@ -33,14 +33,14 @@
     "sort-css-media-queries": "2.0.4"
   },
   "devDependencies": {
-    "autoprefixer": "^10.3.1",
+    "autoprefixer": "^10.3.4",
     "eslint": "^7.32.0",
     "eslint-ci": "^1.0.0",
     "eslint-plugin-jest": "^24.4.0",
-    "husky": "^7.0.1",
-    "jest": "^27.0.6",
+    "husky": "^7.0.2",
+    "jest": "^27.1.1",
     "jest-ci": "^0.1.1",
-    "jest-cli": "^27.0.6",
+    "jest-cli": "^27.1.1",
     "lint-staged": "^11.1.2",
     "postcss": "^8.3.6",
     "postcss-flexbugs-fixes": "^5.0.2",
