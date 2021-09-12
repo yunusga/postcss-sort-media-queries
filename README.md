@@ -14,6 +14,10 @@
 
 > **Combine** same media queries into one - is a unexpected side effect for this plugin 🧬
 
+## Online demo
+
+And here is the [online demo](https://postcss-sort-media-queries.github.io)
+
 ## Examples
 
 ### Mobile first sorting
