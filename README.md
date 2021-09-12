@@ -180,6 +180,24 @@ In this example, all your media queries will sort by A-Z order.
 
 This sorting function is directly passed to Array#sort() method of an array of all your media queries.
 
+### Sort configuration
+
+By this configuration you can control sorting behaviour.
+
+```js
+postcss([
+  sortMediaQueries({
+    configuration: {
+      unitlessMqAlwaysFirst: true, // or false
+    }
+  })
+]).process(css);
+```
+
+Or alternatively create a `sort-css-mq.config.json` file in the root of your project. Or add property `sortCssMQ: {}` in your `package.json`.
+
+---
+
 ## Changelog
 
 See [Releases history]

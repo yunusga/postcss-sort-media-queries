@@ -96,3 +96,57 @@ it('postcss nested -> media minmax', async () => {
   let output = fs.readFileSync('./test/postcss.media.minmax.out.css', 'utf8')
   await mediaMinmaxAfterNestedRun(input, output)
 })
+
+
+it('configuration(mixed #1): [mobile first] unitlessMqAlwaysFirst: FALSE', async () => {
+  let input = fs.readFileSync('./test/configuration/false-mixed-mobile.in.css', 'utf8')
+  let output = fs.readFileSync('./test/configuration/false-mixed-mobile.out.css', 'utf8')
+
+  let options = {
+    configuration: {
+      unitlessMqAlwaysFirst: false,
+    }
+  }
+  await run(input, output, options)
+})
+
+
+it('configuration(mixed #1): [mobile first] unitlessMqAlwaysFirst: TRUE', async () => {
+  let input = fs.readFileSync('./test/configuration/true-mixed-mobile.in.css', 'utf8')
+  let output = fs.readFileSync('./test/configuration/true-mixed-mobile.out.css', 'utf8')
+
+  let options = {
+    configuration: {
+      unitlessMqAlwaysFirst: true,
+    }
+  }
+  await run(input, output, options)
+})
+
+
+it('configuration(mixed #2): [desktop first] unitlessMqAlwaysFirst: FALSE', async () => {
+  let input = fs.readFileSync('./test/configuration/false-mixed-desktop.in.css', 'utf8')
+  let output = fs.readFileSync('./test/configuration/false-mixed-desktop.out.css', 'utf8')
+
+  let options = {
+    sort: 'desktop-first',
+    configuration: {
+      unitlessMqAlwaysFirst: false,
+    }
+  }
+  await run(input, output, options)
+})
+
+
+it('configuration(mixed #2): [desktop first] unitlessMqAlwaysFirst: TRUE', async () => {
+  let input = fs.readFileSync('./test/configuration/true-mixed-desktop.in.css', 'utf8')
+  let output = fs.readFileSync('./test/configuration/true-mixed-desktop.out.css', 'utf8')
+
+  let options = {
+    sort: 'desktop-first',
+    configuration: {
+      unitlessMqAlwaysFirst: true,
+    }
+  }
+  await run(input, output, options)
+})

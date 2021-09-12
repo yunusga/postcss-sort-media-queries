@@ -1,6 +1,4 @@
-const sortCSSmq = require('sort-css-media-queries')
-
-function sortAtRules (queries, sort) {
+function sortAtRules(queries, sort, sortCSSmq) {
   if (typeof sort !== 'function') {
     sort = sort === 'desktop-first' ? sortCSSmq.desktopFirst : sortCSSmq
   }
@@ -9,12 +7,17 @@ function sortAtRules (queries, sort) {
 }
 
 module.exports = (opts = {}) => {
+
   opts = Object.assign(
     {
-      sort: 'mobile-first'
+      sort: 'mobile-first',
+      configuration: false,
     },
     opts
   )
+
+  const createSort = require('sort-css-media-queries/lib/create-sort');
+  const sortCSSmq = opts.configuration ? createSort(opts.configuration) : require('sort-css-media-queries');
 
   return {
     postcssPlugin: 'postcss-sort-media-queries',
@@ -40,7 +43,7 @@ module.exports = (opts = {}) => {
         atRule.remove()
       })
 
-      sortAtRules(Object.keys(atRules), opts.sort).forEach(query => {
+      sortAtRules(Object.keys(atRules), opts.sort, sortCSSmq).forEach(query => {
         root.append(atRules[query])
       })
     }

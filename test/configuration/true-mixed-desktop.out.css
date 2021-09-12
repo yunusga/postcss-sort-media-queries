@@ -1,0 +1,65 @@
+@media only screen {
+  body {
+    color: red;
+  }
+}
+@media screen {
+  body {
+    color: red;
+  }
+}
+@media screen and (hover: none) {
+  body {
+    color: red;
+  }
+}
+@media tv {
+  body {
+    color: red;
+  }
+}
+@media screen and (max-width: 1280px) {
+  body {
+    color: red;
+  }
+}
+@media screen and (max-width: 980px) {
+  body {
+    color: red;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    color: red;
+  }
+}
+@media screen and (max-width: 640px) {
+  body {
+    color: red;
+  }
+}
+@media screen and (min-width: 640px) {
+  body {
+    color: red;
+  }
+}
+@media screen and (min-width: 768px) {
+  body {
+    color: red;
+  }
+}
+@media screen and (min-width: 980px) {
+  body {
+    color: red;
+  }
+}
+@media screen and (min-width: 1280px) {
+  body {
+    color: red;
+  }
+}
+@media print {
+  body {
+    color: red;
+  }
+}

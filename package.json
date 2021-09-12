@@ -81,5 +81,8 @@
         "statements": 100
       }
     }
+  },
+  "sortCssMQ": {
+    "unitlessMqAlwaysFirst": false
   }
 }
