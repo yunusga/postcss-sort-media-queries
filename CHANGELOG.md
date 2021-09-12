@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [WIP] XXXX-XX-XX
+## [3.12.13] 2021-09-12
 
 - Update **postcss** to [8.3.6](https://github.com/postcss/postcss/releases/tag/8.3.6)
   - Fixed column in `missed semicolon` error (by @Gusted).
@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Fix package dependencies
 - Update dev dependencies
 - Fixed dependencies vulnerabilities
+- Add online demo
 
 ## [3.11.12] 2021-06-10
 
