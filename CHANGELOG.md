@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [4.3.0] 2022-10-06
+
+- Update **postcss** to [8.4.16](https://github.com/postcss/postcss/releases/tag/8.4.16)
+- Update **sort-css-media-queries** to [v2.1.0](https://github.com/dutchenkoOleg/sort-css-media-queries/releases/tag/v2.1.0)
+  - support "min-width: 0" expression on mobile-first sort
+
 ## [4.2.1] 2021-11-28
 
 - Update **postcss** to [8.4.4](https://github.com/postcss/postcss/releases/tag/8.4.4)
