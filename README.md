@@ -10,9 +10,30 @@
 [![npm](https://img.shields.io/npm/v/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries) [![Build Status][ci-img]][ci]
 [![npm](https://img.shields.io/npm/dt/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries)
 
-[PostCSS] plugin for combine and sort CSS media queries with **mobile first** or **desktop first** methods.
+<img src="logo.svg?sanitize=true" align="right" title="PostCSS sort media queries logotype" width="100" height="100">
 
-> **Combine** same media queries into one - is a unexpected side effect for this plugin 🧬
+🌏 **English** ▫ [**O'zbek**](README-UZ.md)
+
+[PostCSS] plugin for sorting and combining CSS media queries with **mobile first** / **desktop first** methodologies.
+
+> From 5.0.0 plugin support [Media Feature Types: “range”](https://www.w3.org/TR/mediaqueries-4/#mq-ranges)
+
+## Table of Contents
+
+ - [Online demo](#online-demo)
+ - [Examples](#examples)
+   - [Mobile first sorting](#mobile-first-sorting)
+   - [Desktop first sorting](#desktop-first-sorting)
+ - [Install](#install)
+ - [Usage](#usage)
+ - [Options](#options)
+   - [sort](#sort)
+   - [Custom sort function](#custom-sort-function)
+   - [Sort configuration](#sort-configuration)
+ - [Changelog](#changelog)
+ - [License](#license)
+ - [Other PostCSS plugins](#other-postcss-plugins)
+ - [Thanks 💪](#thanks)
 
 ## Online demo
 
@@ -22,8 +43,9 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 
 ### Mobile first sorting
 
+**before**
+
 ```css
-/* before */
 @media screen and (max-width: 640px) {
   .head { color: #cfcfcf }
 }
@@ -42,8 +64,11 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 @media screen and (max-width: 640px) {
   .footer { color: #cfcfcf }
 }
+```
 
-/* after */
+**after**
+
+```css
 @media screen and (min-width: 640px) {
   .mobile-first { color: #cfcfcf }
 }
@@ -54,6 +79,7 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
   .footer { color: #cfcfcf }
 }
 @media screen and (max-width: 640px) {
+  /* combined */
   .head { color: #cfcfcf }
   .main { color: #cfcfcf }
   .footer { color: #cfcfcf }
@@ -62,8 +88,8 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 
 ### Desktop first sorting
 
+**before**
 ```css
-/* before */
 @media screen and (max-width: 640px) {
   .header { color: #cdcdcd }
 }
@@ -82,12 +108,16 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 @media screen and (max-width: 640px) {
   .footer { color: #cdcdcd }
 }
+```
 
-/* after */
+**after**
+
+```css
 @media screen and (max-width: 760px) {
   .footer { color: #cdcdcd }
 }
 @media screen and (max-width: 640px) {
+  /* combined */
   .header { color: #cdcdcd }
   .main { color: #cdcdcd }
   .footer { color: #cdcdcd }
@@ -100,7 +130,7 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 }
 ```
 
-## Getting Started
+## Install
 
 First thing's, install the module:
 
@@ -108,7 +138,7 @@ First thing's, install the module:
 npm install postcss postcss-sort-media-queries --save-dev
 ```
 
-## 🍳 Usage
+## Usage
 
 Check you project for existed PostCSS config: `postcss.config.js`
 in the project root, `"postcss"` section in `package.json`
@@ -133,7 +163,7 @@ module.exports = {
 If you do not use PostCSS, add it according to [official docs]
 and set this plugin in settings.
 
-## 🍰 Options
+## Options
 
 > Sorting works based on [dutchenkoOleg/sort-css-media-queries](https://github.com/dutchenkoOleg/sort-css-media-queries) function.
 
@@ -210,10 +240,10 @@ See [Releases history]
 
 - [`postcss-momentum-scrolling`](https://github.com/solversgroup/postcss-momentum-scrolling) - plugin for adding **momentum** style scrolling behavior (`-webkit-overflow-scrolling:touch`) for elements with overflow (scroll, auto) on iOS
 
-## Thanks 💪
+## Thanks
 
 - Andrey Sitnik [@ai](https://github.com/ai)
+- Oleh Dutchenko [@dutchenkoOleg](https://github.com/dutchenkoOleg)
 - Jakub Caban [@Lustmored](https://github.com/Lustmored)
 - Dmytro Symonov [@Kassaila](https://github.com/Kassaila)
 - Kai Falkowski [@SassNinja](https://github.com/SassNinja)
-- Олег Дутченко [@dutchenkoOleg](https://github.com/dutchenkoOleg)
