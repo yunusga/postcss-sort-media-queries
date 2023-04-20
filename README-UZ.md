@@ -29,13 +29,13 @@
    - [Ish stoli kompyuter qurilmalarni tartiblash](#ish-stoli-kompyuter-qurilmalarni-tartiblash)
  - [O'rnatish](#ornatish)
  - [Foydalanish](#foydalanish)
- - [Variantlar](#variantlar)
+ - [Optsiyalar](#optsiyalar)
    - [Saralash](#saralash)
    - [Maxsus tartiblash funksiyasi](#maxsus-tartiblash-funksiyasi)
    - [Saralash konfiguratsiyasi](#saralash-konfiguratsiyasi)
  - [O'zgarishlar jurnali](#ozgarishlar-jurnali)
  - [Litsenziya](#litsenziya)
- - [Boshqa PostCSS plaginlari](#boshqa-postCSS-plaginlari)
+ - [Boshqa PostCSS plaginlari](#boshqa-postcss-plaginlari)
  - [Rahmat 💪](#rahmat)
 
 
@@ -178,3 +178,89 @@ module.exports = {
 
 Agar siz PostCSS-dan foydalanmasangiz, uni [official docs] ga
 muvofiq qo'shing va sozlamalarda ushbu plaginni o'rnating.
+
+
+## Optsiyalar
+
+> Saralash asosida ishlaydi, funktsiyasi [dutchenkoOleg/sort-css-media-queries](https://github.com/dutchenkoOleg/sort-css-media-queries)
+
+### Saralash
+
+Ushbu parametr **string** yoki **funktsiya** qiymatlarini qo'llab-quvvatlaydi.
+
+- `{string}` `'mobile-first'` - (standart) mobil qurilmalarni tartiblash
+- `{string}` `'desktop-first'` - kompyuter qurilmalarni tartiblash
+- `{function}` o'zingizning saralash funksiyangiz
+
+#### `'mobil-qurilmalar'`
+
+```js
+postcss([
+  sortMediaQueries({
+    sort: 'mobile-first' // standart
+  })
+]).process(css);
+```
+
+#### `'kompyuter-qurilmalar'`
+
+```js
+postcss([
+  sortMediaQueries({
+    sort: 'desktop-first'
+  })
+]).process(css);
+```
+
+### Maxsus tartiblash funksiyasi
+```js
+postcss([
+  sortMediaQueries({
+    function(a, b) {
+      return a.localeCompare(b);
+    }
+  })
+]).process(css);
+```
+
+Ishbu misolda barcha media so'rovlaringiz A dan Z gacha tartib bo'yicha saralanadi
+
+Ushbu tartiblash funksiyasi to'g'ridan-to'g'ri barcha media so'rovlaringiz qatorini Array#sort() usuliga o'tkaziladi.
+
+### Saralash konfiguratsiyasi
+
+Ushbu konfiguratsiya orqali siz tartiblash xatti-harakatlarini boshqarishingiz mumkin.
+
+```js
+postcss([
+  sortMediaQueries({
+    configuration: {
+      unitlessMqAlwaysFirst: true, // yoki false
+    }
+  })
+]).process(css);
+```
+
+Yoki muqobil ravishda loyihangiz ildizida “sort-css-mq.config.json” faylini yarating. Yoki “package.json”ingizga “sortCssMQ: {}” xususiyatini qo‘shing.
+
+---
+
+## O'zgarishlar jurnali
+
+Bu yerda: [Releases history]
+
+## Litsenziya
+
+[MIT]
+
+## Boshqa PostCSS plaginlari
+
+- [`postcss-momentum-scrolling`](https://github.com/solversgroup/postcss-momentum-scrolling) - iOS tizimida toʻlib-toshgan (aylantirish, avtomatik) elementlar uchun **momentum** uslubidagi aylantirish harakatini qoʻshish uchun plagin (`-webkit-overflow-scrolling:touch`)
+
+## Rahmat
+
+- Andrey Sitnik [@ai](https://github.com/ai)
+- Oleh Dutchenko [@dutchenkoOleg](https://github.com/dutchenkoOleg)
+- Jakub Caban [@Lustmored](https://github.com/Lustmored)
+- Dmytro Symonov [@Kassaila](https://github.com/Kassaila)
+- Kai Falkowski [@SassNinja](https://github.com/SassNinja)
