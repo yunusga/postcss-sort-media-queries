@@ -1,4 +1,4 @@
-# PostCSS Sort Media Queries
+# PostCSS tartiblash media so'rovlari
 
 [PostCSS]:          https://github.com/postcss/postcss
 [ci-img]:           https://travis-ci.org/solversgroup/postcss-sort-media-queries.svg
@@ -13,3 +13,27 @@
 <img src="logo.svg?sanitize=true" align="right" title="PostCSS sort media queries logotype" width="100" height="100">
 
 🌏 [**English**](README.md) ▫ **O'zbek**
+
+[PostCSS] CSS media so'rovlarini **mobil qurilma** va **ish stoli kompyuter**  metodologiyalari bilan ularni saralash va birlashtirish uchun xizmat qiladi.
+
+
+
+> 5.0.0 plaginini qo'llab-quvvatlaydigan [Media funksiyasi turlari: “diapazon”](https://www.w3.org/TR/mediaqueries-4/#mq-ranges)
+
+
+## Mundarija
+
+ - [Onlayn demo](#onlayn-demo)
+ - [Misollar](#misollar)
+   - [Mobil qurilmalarni tartiblash](#mobil-qurilmalarni-tartiblash)
+   - [Ish stoli kompyuter qurilmalarni tartiblash](#ish-stoli-kompyuter-qurilmalarni-tartiblash)
+ - [O'rnatish](#ornatish)
+ - [Foydalanish](#foydalanish)
+ - [Variantlar](#variantlar)
+   - [Saralash](#saralash)
+   - [Maxsus tartiblash funksiyasi](#maxsus-tartiblash-funksiyasi)
+   - [Saralash konfiguratsiyasi](#saralash-konfiguratsiyasi)
+ - [O'zgarishlar jurnali](#ozgarishlar-jurnali)
+ - [Litsenziya](#litsenziya)
+ - [Boshqa PostCSS plaginlari](#boshqa-postCSS-plaginlari)
+ - [Rahmat 💪](#rahmat)
