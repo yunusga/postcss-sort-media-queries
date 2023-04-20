@@ -1,18 +1,25 @@
 {
   "name": "postcss-sort-media-queries",
   "version": "4.3.0",
-  "description": "PostCSS plugin for combine and sort CSS media queries with mobile first or desktop first methods.",
+  "description": "PostCSS plugin for sorting and combining CSS media queries with mobile first / **desktop first methodologies",
   "keywords": [
     "postcss",
-    "css",
     "postcss-plugin",
+    "css",
+    "css-optimizations",
     "sort",
-    "media-queries",
+    "mobile-first",
+    "desktop-first",
     "mediaquery",
+    "media-queries",
     "mq",
-    "optimization"
+    "responsive-css",
+    "combine-media-query",
+    "sort-media-query",
+    "css-mqpacker",
+    "node-css-mqpacker"
   ],
-  "author": "Yunus Gaziev <yunusga@yandex.ru>",
+  "author": "Yunus Gaziyev <yunusga@yandex.ru>",
   "license": "MIT",
   "repository": {
     "type": "git",
