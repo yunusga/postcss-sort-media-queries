@@ -150,7 +150,18 @@ If you already use PostCSS, add the plugin to plugins list:
 module.exports = {
   plugins: [
 +   require('postcss-sort-media-queries')({
-+     // sort: 'mobile-first' default value
++     sort: 'mobile-first' default value
++   }),
+    require('autoprefixer')
+  ]
+}
+```
+
+or with custom sort function
+```diff
+module.exports = {
+  plugins: [
++   require('postcss-sort-media-queries')({
 +     sort: function(a, b) {
 +        // custom sorting function
 +     }
@@ -195,7 +206,7 @@ postcss([
 ]).process(css);
 ```
 
-#### Custom sort function
+### Custom sort function
 ```js
 postcss([
   sortMediaQueries({
