@@ -41,7 +41,7 @@
 
 ## Onlayn demo
 
-bu yerda [onlayn demo](https://postcss-sort-media-queries.github.io)
+Bu yerda: [onlayn demo](https://postcss-sort-media-queries.github.io)
 
 
 ## Misollar
