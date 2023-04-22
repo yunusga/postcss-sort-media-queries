@@ -262,4 +262,4 @@ Bu yerda: [Releases history]
 - Jakub Caban [@Lustmored](https://github.com/Lustmored)
 - Dmytro Symonov [@Kassaila](https://github.com/Kassaila)
 - Kai Falkowski [@SassNinja](https://github.com/SassNinja)
-- Khayot Razzakov [@SassNinja](https://github.com/Khayotbek1)
+- Khayot Razzakov [@Khayotbek1](https://github.com/Khayotbek1)
