@@ -5,6 +5,7 @@ yarn.lock
 .travis.yml
 .editorconfig
 .gitattributes
+.github
 index.test.js
 
 CHANGELOG.md
