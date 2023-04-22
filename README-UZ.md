@@ -1,11 +1,11 @@
 # PostCSS tartiblash media so'rovlari
 
 [PostCSS]:          https://github.com/postcss/postcss
-[ci-img]:           https://travis-ci.org/solversgroup/postcss-sort-media-queries.svg
-[ci]:               https://travis-ci.org/solversgroup/postcss-sort-media-queries
-[MIT]:              https://github.com/solversgroup/postcss-sort-media-queries/blob/master/LICENSE
+[ci-img]:           https://travis-ci.org/yunusga/postcss-sort-media-queries.svg
+[ci]:               https://travis-ci.org/yunusga/postcss-sort-media-queries
+[MIT]:              https://github.com/yunusga/postcss-sort-media-queries/blob/master/LICENSE
 [official docs]:    https://github.com/postcss/postcss#usage
-[Releases history]: https://github.com/solversgroup/postcss-sort-media-queries/blob/master/CHANGELOG.md
+[Releases history]: https://github.com/yunusga/postcss-sort-media-queries/blob/master/CHANGELOG.md
 
 [![npm](https://img.shields.io/npm/v/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries) [![Build Status][ci-img]][ci]
 [![npm](https://img.shields.io/npm/dt/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries)
@@ -155,7 +155,7 @@ Agar siz allaqachon PostCSS-dan foydalansangiz, plaginni plaginlar ro'yxatiga qo
 module.exports = {
   plugins: [
 +   require('postcss-sort-media-queries')({
-+     sort: 'mobile-first' default value
++     sort: 'mobile-first', // default value
 +   }),
     require('autoprefixer')
   ]
@@ -255,7 +255,7 @@ Bu yerda: [Releases history]
 
 ## Boshqa PostCSS plaginlari
 
-- [`postcss-momentum-scrolling`](https://github.com/solversgroup/postcss-momentum-scrolling) - iOS tizimida toʻlib-toshgan (aylantirish, avtomatik) elementlar uchun **momentum** uslubidagi aylantirish harakatini qoʻshish uchun plagin (`-webkit-overflow-scrolling:touch`)
+- [`postcss-momentum-scrolling`](https://github.com/yunusga/postcss-momentum-scrolling) - iOS tizimida toʻlib-toshgan (aylantirish, avtomatik) elementlar uchun **momentum** uslubidagi aylantirish harakatini qoʻshish uchun plagin (`-webkit-overflow-scrolling:touch`)
 
 ## Rahmat
 
