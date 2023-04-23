@@ -37,7 +37,7 @@
     "node": ">=10.0.0"
   },
   "dependencies": {
-    "sort-css-media-queries": "2.1.0"
+    "sort-css-media-queries": "2.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",
@@ -49,13 +49,13 @@
     "jest-ci": "^0.1.1",
     "jest-cli": "^27.3.1",
     "lint-staged": "^12.1.2",
-    "postcss": "^8.4.4",
+    "postcss": "^8.4.23",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-media-minmax": "^5.0.0",
     "postcss-nested": "^5.0.6"
   },
   "peerDependencies": {
-    "postcss": "^8.4.16"
+    "postcss": "^8.4.23"
   },
   "husky": {
     "hooks": {
