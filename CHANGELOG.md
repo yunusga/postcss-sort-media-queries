@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.0.0] 2023-04-23
+
+- Adds [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/) - ["range"](https://www.w3.org/TR/mediaqueries-4/#mq-ranges) type feature.
+- Upgrade **sort-css-media-queries** to [2.2.0](https://github.com/dutchenkoOleg/sort-css-media-queries/releases/tag/v2.1.0)
+- Upgrade **postcss** to [8.4.23](https://github.com/postcss/postcss/releases/tag/8.4.23)
+- Added README translation to oz'bek language
+  - thanks to @Khayotbek1 for the PR https://github.com/yunusga/postcss-sort-media-queries/pull/46
+
+
+## [4.4.0] 2023-04-22
+
+- Added README translation to oz'bek language
+  - thanks to @Khayotbek1 for the PR https://github.com/yunusga/postcss-sort-media-queries/pull/46
+- npm audit (devDependencies)
+
 ## [4.3.0] 2022-10-06
 
 - Update **postcss** to [8.4.16](https://github.com/postcss/postcss/releases/tag/8.4.16)

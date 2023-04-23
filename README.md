@@ -6,6 +6,7 @@
 [Releases history]: https://github.com/yunusga/postcss-sort-media-queries/blob/master/CHANGELOG.md
 
 [![npm](https://img.shields.io/npm/v/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries) [![Node.js CI](https://github.com/yunusga/postcss-sort-media-queries/actions/workflows/test.yml/badge.svg?branch=main&event=status)](https://github.com/yunusga/postcss-sort-media-queries/actions/workflows/test.yml)
+![license](https://img.shields.io/badge/License-MIT-orange.svg)
 [![npm](https://img.shields.io/npm/dt/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries)
 
 <img src="logo.svg?sanitize=true" align="right" title="PostCSS sort media queries logotype" width="100" height="100">
@@ -56,7 +57,7 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 @media screen and (min-width: 1280px) {
   .mobile-first { color: #cfcfcf }
 }
-@media screen and (min-width: 640px) {
+@media screen and (width > 640px) {
   .mobile-first { color: #cfcfcf }
 }
 @media screen and (max-width: 640px) {
@@ -67,7 +68,7 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 **after**
 
 ```css
-@media screen and (min-width: 640px) {
+@media screen and (width > 640px) {
   .mobile-first { color: #cfcfcf }
 }
 @media screen and (min-width: 1280px) {
@@ -88,13 +89,13 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 
 **before**
 ```css
-@media screen and (max-width: 640px) {
+@media screen and (width < 640px) {
   .header { color: #cdcdcd }
 }
 @media screen and (min-width: 760px) {
   .desktop-first { color: #cdcdcd }
 }
-@media screen and (max-width: 640px) {
+@media screen and (width < 640px) {
   .main { color: #cdcdcd }
 }
 @media screen and (min-width: 1280px) {
@@ -114,7 +115,7 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 @media screen and (max-width: 760px) {
   .footer { color: #cdcdcd }
 }
-@media screen and (max-width: 640px) {
+@media screen and (width < 640px) {
   /* combined */
   .header { color: #cdcdcd }
   .main { color: #cdcdcd }
