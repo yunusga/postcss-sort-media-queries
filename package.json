@@ -23,12 +23,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/solversgroup/postcss-sort-media-queries.git"
+    "url": "https://github.com/yunusga/postcss-sort-media-queries.git"
   },
   "bugs": {
-    "url": "https://github.com/solversgroup/postcss-sort-media-queries/issues"
+    "url": "https://github.com/yunusga/postcss-sort-media-queries/issues"
   },
-  "homepage": "https://github.com/solversgroup/postcss-sort-media-queries",
+  "homepage": "https://github.com/yunusga/postcss-sort-media-queries",
   "scripts": {
     "test": "jest-ci --coverage && eslint-ci .",
     "refresh-deps": "rm -rf node_modules && rm package-lock.json && npm i"
