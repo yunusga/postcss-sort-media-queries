@@ -13,7 +13,7 @@
 
 🌏 [**English**](README.md) ▫ **O'zbek**
 
-[PostCSS] CSS media so'rovlarini **mobil qurilma** va **ish stoli kompyuter**  metodologiyalari bilan ularni saralash va birlashtirish uchun xizmat qiladi.
+[PostCSS] CSS media so'rovlarini **mobile first** va **desktop first**  metodologiyalari bilan ularni saralash va birlashtirish uchun xizmat qiladi.
 
 
 
@@ -24,8 +24,8 @@
 
  - [Onlayn demo](#onlayn-demo)
  - [Misollar](#misollar)
-   - [Mobil qurilmalarni tartiblash](#mobil-qurilmalarni-tartiblash)
-   - [Ish stoli kompyuter qurilmalarni tartiblash](#ish-stoli-kompyuter-qurilmalarni-tartiblash)
+   - [Mobile first](#mobile-first)
+   - [Desktop first](#desktop-first)
  - [O'rnatish](#ornatish)
  - [Foydalanish](#foydalanish)
  - [Optsiyalar](#optsiyalar)
@@ -45,7 +45,7 @@ Bu yerda: [onlayn demo](https://postcss-sort-media-queries.github.io)
 
 ## Misollar
 
-### Mobil qurilmalarni tartiblash
+### Mobile first
 
 **oldin**
 
@@ -90,7 +90,7 @@ Bu yerda: [onlayn demo](https://postcss-sort-media-queries.github.io)
 }
 ```
 
-### Ish stoli kompyuter qurilmalarni tartiblash
+### Desktop first
 
 **oldin**
 ```css
