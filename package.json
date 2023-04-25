@@ -1,6 +1,6 @@
 {
   "name": "postcss-sort-media-queries",
-  "version": "5.0.1",
+  "version": "5.1.0",
   "description": "PostCSS plugin for sorting and combining CSS media queries with mobile first / **desktop first methodologies",
   "keywords": [
     "postcss",
