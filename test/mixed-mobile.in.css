@@ -10,6 +10,11 @@
 @media screen and (max-width: 640px) {
   .mm { color: #fff }
 }
+@media screen and (width > 640px) {
+  .mm {
+    color: #fff
+  }
+}
 @media screen and (orientation: landscape) {
   .mm { color: #fff }
 }
