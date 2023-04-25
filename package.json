@@ -30,11 +30,11 @@
   },
   "homepage": "https://github.com/yunusga/postcss-sort-media-queries",
   "scripts": {
-    "test": "jest-ci --coverage && eslint-ci .",
+    "test": "jest-ci --coverage && eslint",
     "refresh-deps": "rm -rf node_modules && rm package-lock.json && npm i"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=14.0.0"
   },
   "dependencies": {
     "sort-css-media-queries": "2.2.0"
