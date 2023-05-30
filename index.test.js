@@ -146,3 +146,9 @@ it('postcss nested -> media minmax', async () => {
   let output = fs.readFileSync('./test/postcss.media.minmax.out.css', 'utf8')
   await mediaMinmaxAfterNestedRun(input, output)
 })
+
+it('only top level', async () => {
+  let input = fs.readFileSync('./test/only-top-level.in.css', 'utf8')
+  let output = fs.readFileSync('./test/only-top-level.out.css', 'utf8')
+  await run(input, output, { onlyTopLevel: true })
+})
