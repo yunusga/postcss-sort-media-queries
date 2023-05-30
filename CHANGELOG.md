@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [5.2.0] 2023-05-30
+
+- Add [`onlyTopLevel`](README.md#only-top-level) option prevent eject nested media queries from parent
+
+## [5.1.0] 2023-04-25
+
+- Added tests for CSS Level 4 range type media query
+- Fix broken eslint tests
+- Bump yaml and lint-staged
+
 ## [5.0.0] 2023-04-23
 
 - Adds [Media Queries Level 4](https://www.w3.org/TR/mediaqueries-4/) - ["range"](https://www.w3.org/TR/mediaqueries-4/#mq-ranges) type feature.

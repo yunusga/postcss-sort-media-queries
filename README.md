@@ -29,6 +29,7 @@
    - [sort](#sort)
    - [Custom sort function](#custom-sort-function)
    - [Sort configuration](#sort-configuration)
+   - [Only Top Level](#only-top-level)
  - [Changelog](#changelog)
  - [License](#license)
  - [Other PostCSS plugins](#other-postcss-plugins)
@@ -235,6 +236,18 @@ postcss([
 ```
 
 Or alternatively create a `sort-css-mq.config.json` file in the root of your project. Or add property `sortCssMQ: {}` in your `package.json`.
+
+### Only Top Level
+
+Sort only top level media queries to prevent eject nested media queries from parent node
+
+```js
+postcss([
+  sortMediaQueries({
+    onlyTopLevel: true,
+  })
+]).process(css);
+```
 
 ---
 
