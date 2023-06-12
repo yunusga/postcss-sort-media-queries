@@ -50,6 +50,14 @@ it('[df] mixed #1', async () => {
   await run('mixed-desktop.in', 'mixed-desktop.out', { sort: 'desktop-first' });
 });
 
+it('use custom sort function', async () => {
+  await run('custom-sort.in', 'custom-sort.out', { sort: (a, b) => a.length < b.length }, []);
+});
+
+it('sort recursively', async () => {
+  await run('recursive-sort.in', 'recursive-sort.out', { recursive: true }, []);
+});
+
 it('[mf] configuration(mixed #1): unitlessMqAlwaysFirst: FALSE', async () => {
   const options = {
     configuration: {

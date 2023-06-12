@@ -249,6 +249,18 @@ postcss([
 ]).process(css);
 ```
 
+### Recursive
+
+Sort nested media queries recursivey
+
+```js
+postcss([
+  sortMediaQueries({
+    recursive: true,
+  })
+]).process(css);
+```
+
 ---
 
 ## Changelog

@@ -95,7 +95,7 @@ module.exports = (opts = {}) => {
         if (!atRulesKeys.length) return;
 
         sortAtRules(atRulesKeys).forEach(query => {
-          if (recursive) recursivelySort(atRules[query]);
+          if (!onlyTopLevel && recursive) recursivelySort(atRules[query]);
 
           localRoot.append(atRules[query]);
         });
