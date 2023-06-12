@@ -1,0 +1,39 @@
+@media (min-width: 700px) {
+  .a {
+    color: #00FF00;
+  }
+}
+
+@media print{
+  @media (min-width: 250px) {
+    .b {
+      color: #FF0000;
+    }
+  }
+
+  @media (min-width: 700px) {
+    .b {
+      color: #FF0000;
+    }
+  }
+
+  @media (min-width: 150px) {
+    .b {
+      color: #FF0000;
+    }
+  }
+}
+
+@media print {
+  @media (min-width: 700px) {
+    .b {
+      color: #FF0000;
+    }
+  }
+}
+
+@media (width >= 400px) {
+  .a {
+    color: #00FF00;
+  }
+}

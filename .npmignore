@@ -6,6 +6,7 @@ yarn.lock
 .editorconfig
 .gitattributes
 .github
+.vscode
 index.test.js
 
 CHANGELOG.md
