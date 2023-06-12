@@ -40,6 +40,7 @@
     "sort-css-media-queries": "2.2.0"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.2",
     "autoprefixer": "^10.4.0",
     "eslint": "^8.3.0",
     "eslint-ci": "^1.0.0",
