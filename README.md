@@ -176,7 +176,7 @@ and set this plugin in settings.
 
 ## Options
 
-> Sorting works based on [dutchenkoOleg/sort-css-media-queries](https://github.com/dutchenkoOleg/sort-css-media-queries) function.
+> Sorting works based on [OlehDutchenko/sort-css-media-queries](https://github.com/OlehDutchenko/sort-css-media-queries) function.
 
 ### sort
 
