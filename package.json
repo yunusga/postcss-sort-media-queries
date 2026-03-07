@@ -1,7 +1,10 @@
 {
   "name": "postcss-sort-media-queries",
-  "version": "5.2.0",
   "description": "PostCSS plugin for sorting and combining CSS media queries with mobile first / **desktop first methodologies",
+  "version": "5.2.0",
+  "engines": {
+    "node": ">=22.0.0"
+  },
   "keywords": [
     "postcss",
     "postcss-plugin",
@@ -29,67 +32,37 @@
     "url": "https://github.com/yunusga/postcss-sort-media-queries/issues"
   },
   "homepage": "https://github.com/yunusga/postcss-sort-media-queries",
+  "type": "module",
+  "main": "src/index.js",
+  "module": "src/index.js",
+  "exports": {
+    ".": {
+      "require": "./src/index.cjs",
+      "import": "./src/index.js",
+      "default": "./src/index.js"
+    }
+  },
+  "files": [
+    "build"
+  ],
   "scripts": {
-    "test": "jest-ci --coverage && eslint",
-    "refresh-deps": "rm -rf node_modules && rm package-lock.json && npm i"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "dependencies": {
-    "sort-css-media-queries": "3.0.1"
+    "test": "vitest run",
+    "test:watch": "vitest --watch",
+    "coverage": "vitest --coverage",
+    "build": "npm run build:cjs",
+    "build:cjs": "esbuild src/index.js --outfile=build/index.cjs --format=cjs --bundle --platform=node --external:postcss"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "eslint": "^8.3.0",
-    "eslint-ci": "^1.0.0",
-    "eslint-plugin-jest": "^25.3.0",
-    "husky": "^7.0.4",
-    "jest": "^27.3.1",
-    "jest-ci": "^0.1.1",
-    "jest-cli": "^27.3.1",
-    "lint-staged": "^13.2.1",
+    "@vitest/coverage-v8": "^4.0.18",
+    "esbuild": "^0.27.3",
     "postcss": "^8.5.6",
-    "postcss-flexbugs-fixes": "^5.0.2",
-    "postcss-media-minmax": "^5.0.0",
-    "postcss-nested": "^5.0.6"
+    "prettier": "3.8.1",
+    "vitest": "^4.0.18"
   },
   "peerDependencies": {
-    "postcss": "^8.4.23"
+    "postcss": "^8.5.6"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": "eslint --fix"
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 2017
-    },
-    "env": {
-      "node": true,
-      "es6": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:jest/recommended"
-    ],
-    "rules": {
-      "jest/expect-expect": "off"
-    }
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "coverageThreshold": {
-      "global": {
-        "statements": 100
-      }
-    }
-  },
-  "sortCssMQ": {
-    "unitlessMqAlwaysFirst": false
+  "dependencies": {
+    "sort-css-media-queries": "^3.0.1"
   }
 }
