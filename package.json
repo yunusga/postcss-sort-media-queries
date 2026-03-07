@@ -37,7 +37,7 @@
   "module": "src/index.js",
   "exports": {
     ".": {
-      "require": "./src/index.cjs",
+      "require": "./build/wrapper.cjs",
       "import": "./src/index.js",
       "default": "./src/index.js"
     }
