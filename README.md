@@ -1,8 +1,9 @@
 # PostCSS Sort Media Queries
 
 [PostCSS]:          https://github.com/postcss/postcss
-[MIT]:              https://github.com/yunusga/postcss-sort-media-queries/blob/master/LICENSE
 [official docs]:    https://github.com/postcss/postcss#usage
+[Online Demo]:      https://yunusga.uz/postcss-sort-media-queries/
+[MIT]:              https://github.com/yunusga/postcss-sort-media-queries/blob/master/LICENSE
 [Releases history]: https://github.com/yunusga/postcss-sort-media-queries/blob/master/CHANGELOG.md
 
 [![npm](https://img.shields.io/npm/v/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries) [![Node.js CI](https://github.com/yunusga/postcss-sort-media-queries/actions/workflows/test.yml/badge.svg?branch=main&event=status)](https://github.com/yunusga/postcss-sort-media-queries/actions/workflows/test.yml)
@@ -37,7 +38,7 @@
 
 ## Online demo
 
-And here is the [online demo](https://postcss-sort-media-queries.github.io)
+And here is the [Online Demo]
 
 ## Examples
 
