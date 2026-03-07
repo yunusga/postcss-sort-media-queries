@@ -15,7 +15,7 @@
 
 [PostCSS] plugin for sorting and combining CSS media queries with **mobile first** / **desktop first** methodologies.
 
-> From 5.0.0 plugin support [Media Feature Types: “range”](https://www.w3.org/TR/mediaqueries-4/#mq-ranges)
+> From v6.0.0 plugin supported nested media queries and ESM usage
 
 ## Table of Contents
 
@@ -43,47 +43,44 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 
 ### Mobile first sorting
 
-**before**
+**Before**
 
 ```css
-@media screen and (max-width: 640px) {
-  .head { color: #cfcfcf }
-}
-@media screen and (max-width: 768px) {
-  .footer { color: #cfcfcf }
-}
-@media screen and (max-width: 640px) {
-  .main { color: #cfcfcf }
-}
-@media screen and (min-width: 1280px) {
-  .mobile-first { color: #cfcfcf }
-}
-@media screen and (width > 640px) {
-  .mobile-first { color: #cfcfcf }
-}
-@media screen and (max-width: 640px) {
-  .footer { color: #cfcfcf }
+@media (min-width: 1400px) {}
+@media (min-width: 1200px) {}
+
+@layer reset {
+
+  @media (min-width: 1200px) {
+    @media (min-width: 992px) {}
+    @media (min-width: 768px) {}
+  }
+
+  @media (min-width: 768px) {
+    @media (min-width: 640px) {}
+    @media (min-width: 320px) {}
+  }
 }
 ```
 
-**after**
+**After**
 
 ```css
-@media screen and (width > 640px) {
-  .mobile-first { color: #cfcfcf }
+@layer reset {
+
+  @media (min-width: 768px) {
+    @media (min-width: 320px) {}
+    @media (min-width: 640px) {}
+  }
+
+  @media (min-width: 1200px) {
+    @media (min-width: 768px) {}
+    @media (min-width: 992px) {}
+  }
 }
-@media screen and (min-width: 1280px) {
-  .mobile-first { color: #cfcfcf }
-}
-@media screen and (max-width: 768px) {
-  .footer { color: #cfcfcf }
-}
-@media screen and (max-width: 640px) {
-  /* combined */
-  .head { color: #cfcfcf }
-  .main { color: #cfcfcf }
-  .footer { color: #cfcfcf }
-}
+
+@media (min-width: 1200px) {}
+@media (min-width: 1400px) {}
 ```
 
 ### Desktop first sorting
@@ -143,6 +140,15 @@ npm install postcss postcss-sort-media-queries --save-dev
 Check you project for existed PostCSS config: `postcss.config.js`
 in the project root, `"postcss"` section in `package.json`
 or `postcss` in bundle config.
+
+
+```js
+// CJS
+let sortCssMq = require('postcss-sort-media-queries');
+
+// ESM
+import sortCssMq from 'postcss-sort-media-queries';
+```
 
 If you already use PostCSS, add the plugin to plugins list:
 
@@ -237,18 +243,6 @@ postcss([
 
 Or alternatively create a `sort-css-mq.config.json` file in the root of your project. Or add property `sortCssMQ: {}` in your `package.json`.
 
-### Only Top Level
-
-Sort only top level media queries to prevent eject nested media queries from parent node
-
-```js
-postcss([
-  sortMediaQueries({
-    onlyTopLevel: true,
-  })
-]).process(css);
-```
-
 ---
 
 ## Changelog
@@ -266,7 +260,7 @@ See [Releases history]
 ## Thanks
 
 - Andrey Sitnik [@ai](https://github.com/ai)
-- Oleh Dutchenko [@dutchenkoOleg](https://github.com/dutchenkoOleg)
+- Oleh Dutchenko [@dutchenkoOleg](https://github.com/OlehDutchenko)
 - Jakub Caban [@Lustmored](https://github.com/Lustmored)
 - Dmytro Symonov [@Kassaila](https://github.com/Kassaila)
 - Kai Falkowski [@SassNinja](https://github.com/SassNinja)
