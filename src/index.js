@@ -97,7 +97,7 @@ function plugin(options = {}) {
             }
 
             atRule.nodes.forEach((node) => {
-              atRules[query].append(node.clone());
+              atRules[query].append(node);
             });
 
             // Remove the original at-rule since its contents have been
