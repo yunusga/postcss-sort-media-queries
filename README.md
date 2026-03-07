@@ -85,7 +85,7 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 
 ### Desktop first sorting
 
-**before**
+**Before**
 ```css
 @media screen and (width < 640px) {
   .header { color: #cdcdcd }
@@ -107,7 +107,7 @@ And here is the [online demo](https://postcss-sort-media-queries.github.io)
 }
 ```
 
-**after**
+**After**
 
 ```css
 @media screen and (max-width: 760px) {
