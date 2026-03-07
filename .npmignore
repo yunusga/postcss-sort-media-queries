@@ -6,12 +6,12 @@ yarn.lock
 .editorconfig
 .gitattributes
 .github
-index.test.js
+vitest.config.js
 
 CHANGELOG.md
 README-UZ.md
 
 logo.svg
 
-test/
+tests/
 coverage/
