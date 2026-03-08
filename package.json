@@ -50,6 +50,7 @@
     "test:watch": "vitest --watch",
     "coverage": "vitest --coverage",
     "lint": "eslint",
+    "prepare": "husky",
     "build": "npm run build:cjs",
     "build:cjs": "esbuild src/index.js --outfile=build/index.cjs --format=cjs --bundle --platform=node --external:postcss"
   },
@@ -59,6 +60,7 @@
     "esbuild": "^0.27.3",
     "eslint": "^10.0.3",
     "globals": "^17.4.0",
+    "husky": "^9.1.7",
     "postcss": "^8.5.6",
     "prettier": "3.8.1",
     "vitest": "^4.0.18"
