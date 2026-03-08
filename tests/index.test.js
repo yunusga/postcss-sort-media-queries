@@ -39,7 +39,7 @@ async function runTest(plugin, name, options = {}) {
 // Load both builds so tests run against ESM and CJS bundles
 const builds = {
   ESM: () => import('../src/index.js'),
-  CJS: () => import('../src/index.cjs'),
+  CJS: () => import('../build/wrapper.cjs'),
 }
 
 // Test cases (defined once and reused for both builds)

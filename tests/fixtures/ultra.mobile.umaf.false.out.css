@@ -44,11 +44,6 @@
         background: red;
       }
     }
-    @media (min-width: 600px) {
-      html {
-        background: lightblue;
-      }
-    }
 
     html {
       background: pink;
@@ -73,31 +68,14 @@
       font-size: 14px;
     }
 
-    @media (min-width: 768px) {
-      body {
-        font-size: 16px;
-      }
-    }
-
     body {
       font-size: 14px;
-    }
-
-    @media (min-width: 1024px) {
-      body {
-        font-size: 18px;
-      }
     }
   }
 
   @media (500px < width < 1200px) {
     body {
       line-height: 1.8;
-    }
-    @media (600px <= width <= 900px) {
-      body {
-        letter-spacing: 0.05em;
-      }
     }
     @media (width >= 1000px) {
       body {
@@ -109,11 +87,6 @@
   @media (max-width: 1440px) {
     body {
       font-size: 13px;
-    }
-    @media (max-width: 1024px) {
-      body {
-        font-size: 12px;
-      }
     }
     @media (max-width: 768px) {
       body {
@@ -133,11 +106,6 @@
     .card {
       padding: 2rem;
     }
-    @media (min-width: 992px) {
-      .card {
-        padding: 3rem;
-      }
-    }
     @media (min-width: 1200px) {
       .card {
         padding: 4rem;
@@ -147,11 +115,6 @@
   @media (max-width: 767px) {
     .card {
       background: #ffe4e1;
-    }
-    @media (max-width: 500px) {
-      .card {
-        background: #ffc0cb;
-      }
     }
     @media (max-width: 320px) {
       .card {
@@ -170,11 +133,6 @@
     .text-center {
       color: white;
     }
-    @media (min-width: 768px) {
-      .text-center {
-        font-size: 20px;
-      }
-    }
     @media (min-width: 1024px) {
       .text-center {
         font-size: 24px;
@@ -184,11 +142,6 @@
   @media (max-width: 1024px) and (hover: hover) {
     .text-center {
       text-decoration: underline;
-    }
-    @media (max-width: 800px) {
-      .text-center {
-        font-style: italic;
-      }
     }
     @media (max-width: 600px) {
       .text-center {
@@ -204,33 +157,23 @@
   @supports (display: grid) {
     @media (min-width: 600px) {
       @container sidebar (max-width: 700px) {
-        @media (prefers-reduced-motion: no-preference) {
-          .crazy {
-            display: grid;
-          }
-          @media (min-width: 800px) {
-            .crazy {
-              gap: 2rem;
-            }
-          }
-          @media (max-width: 500px) {
-            .crazy {
-              gap: 0.5rem;
-            }
-          }
-        }
         @media (orientation: portrait) {
           .crazy {
             grid-template-columns: 1fr;
           }
-          @media (min-width: 700px) {
-            .crazy {
-              grid-template-columns: 2fr 1fr;
-            }
-          }
           @media (max-width: 400px) {
             .crazy {
               grid-template-columns: auto;
+            }
+          }
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          .crazy {
+            display: grid;
+          }
+          @media (max-width: 500px) {
+            .crazy {
+              gap: 0.5rem;
             }
           }
         }
@@ -242,11 +185,6 @@
           .wild {
             border: 5px solid blue;
           }
-          @media (min-width: 1200px) {
-            .wild {
-              border-color: green;
-            }
-          }
           @media (max-width: 600px) {
             .wild {
               border-color: red;
@@ -256,11 +194,6 @@
         @media (min-resolution: 2dppx) {
           .wild {
             background-image: url(hi-res.png);
-          }
-          @media (min-width: 800px) {
-            .wild {
-              background-color: lightgreen;
-            }
           }
           @media (max-width: 400px) {
             .wild {
@@ -323,11 +256,6 @@
   .speech-only {
     voice-volume: x-loud;
   }
-  @media (min-width: 400px) {
-    .speech-only {
-      pause: 10ms;
-    }
-  }
   @media (max-width: 399px) {
     .speech-only {
       pause: 20ms;
@@ -337,11 +265,6 @@
 @media print {
   .print-only {
     display: block;
-  }
-  @media (orientation: landscape) {
-    .print-only {
-      color: black;
-    }
   }
   @media (orientation: portrait) {
     .print-only {

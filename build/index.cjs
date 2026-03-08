@@ -252,6 +252,7 @@ function plugin(options = {}) {
   const sortCSSmq = createSort(options.configuration);
   return {
     postcssPlugin: "postcss-sort-media-queries",
+    // Execute once after the entire tree has been parsed
     OnceExit(root, { AtRule }) {
       let parents = {
         root: [],
@@ -293,7 +294,7 @@ function plugin(options = {}) {
               });
             }
             atRule.nodes.forEach((node) => {
-              atRules[query].append(node.clone());
+              atRules[query].append(node);
             });
             atRule.remove();
           });
