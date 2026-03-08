@@ -49,12 +49,16 @@
     "test": "vitest run",
     "test:watch": "vitest --watch",
     "coverage": "vitest --coverage",
+    "lint": "eslint",
     "build": "npm run build:cjs",
     "build:cjs": "esbuild src/index.js --outfile=build/index.cjs --format=cjs --bundle --platform=node --external:postcss"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@vitest/coverage-v8": "^4.0.18",
     "esbuild": "^0.27.3",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
     "postcss": "^8.5.6",
     "prettier": "3.8.1",
     "vitest": "^4.0.18"
