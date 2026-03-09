@@ -1,19 +1,19 @@
 import { describe, it, expect, beforeAll } from 'vitest'
 import { readFileSync, writeFileSync } from 'node:fs'
-import path from 'node:path'
+import { join, resolve } from 'node:path'
 import postcss from 'postcss'
 import prettier from 'prettier'
 
-const fixturesDir = path.resolve('tests/fixtures')
+const fixturesDir = resolve('tests/fixtures')
 
 // Read a fixture file by name from the fixtures directory
 function read(name) {
-  return readFileSync(path.join(fixturesDir, name), 'utf8')
+  return readFileSync(join(fixturesDir, name), 'utf8');
 }
 
 // Normalize CSS formatting using Prettier (returns trimmed string)
 async function normalize(css) {
-  return (await prettier.format(css, { parser: 'css' })).trim()
+  return (await prettier.format(css, { parser: 'css' })).trim();
 }
 
 // Run a single plugin test: process input, normalize output, and compare
@@ -29,7 +29,7 @@ async function runTest(plugin, name, options = {}) {
 
   // Write optional debug output into a `.result.css` file in fixtures
   writeFileSync(
-    path.join(fixturesDir, `${name}.result.css`),
+    join(fixturesDir, `${name}.result.css`),
     actual
   )
 
@@ -80,7 +80,7 @@ const testCases = [
     options: {
       configuration: { unitlessMqAlwaysFirst: false }
     }
-  }
+  },
 ]
 
 // Run the same set of tests for both ESM and CJS builds
