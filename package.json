@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/yunusga/postcss-sort-media-queries/issues"
   },
-  "homepage": "https://github.com/yunusga/postcss-sort-media-queries",
+  "homepage": "https://yunusga.uz/postcss-sort-media-queries",
   "type": "module",
   "main": "src/index.js",
   "module": "src/index.js",
