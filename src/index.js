@@ -96,7 +96,7 @@ function plugin(options = {}) {
               });
             }
 
-            atRule.nodes.forEach((node) => {
+            [...atRule.nodes].forEach((node) => {
               atRules[query].append(node);
             });
 
