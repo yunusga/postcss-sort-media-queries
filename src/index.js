@@ -1,5 +1,5 @@
 import createSort from 'sort-css-media-queries/create-sort';
-import { randomUUID } from 'crypto';
+import { nanoid } from 'nanoid';
 
 // PostCSS plugin to sort CSS @media rules according to a configurable order.
 // The plugin groups top-level and nested media at-rules, merges rules
@@ -51,7 +51,7 @@ function plugin(options = {}) {
       // Walk all @media at-rules and group their parents
       root.walkAtRules('media', (atRule) => {
         if (!atRule.parent.groupId) {
-          let groupId = randomUUID();
+          let groupId = nanoid();
 
           atRule.parent.groupId = groupId;
 
