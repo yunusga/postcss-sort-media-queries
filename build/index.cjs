@@ -235,11 +235,19 @@ function createSort(configuration) {
 }
 
 // src/index.js
+var import_crypto = require("crypto");
 function sortAtRules(queries, options, sortCSSmq) {
   if (typeof options.sort !== "function") {
     options.sort = options.sort === "desktop-first" ? sortCSSmq.desktopFirst : sortCSSmq;
   }
   return queries.sort(options.sort);
+}
+function getDepth(node) {
+  let depth = 0;
+  for (let p = node.parent; p; p = p.parent) {
+    depth++;
+  }
+  return depth;
 }
 function plugin(options = {}) {
   options = Object.assign(
@@ -254,55 +262,63 @@ function plugin(options = {}) {
     postcssPlugin: "postcss-sort-media-queries",
     // Execute once after the entire tree has been parsed
     OnceExit(root, { AtRule }) {
-      let parents = {
-        root: [],
-        nested: []
-      };
-      let processed = /* @__PURE__ */ Symbol("processed");
+      let parents = [];
       root.walkAtRules("media", (atRule) => {
-        if (atRule.parent[processed]) {
-          return;
+        if (!atRule.parent.groupId) {
+          let groupId = (0, import_crypto.randomUUID)();
+          atRule.parent.groupId = groupId;
+          parents[groupId] = {
+            parent: atRule.parent,
+            depth: getDepth(atRule.parent)
+          };
         }
-        if (atRule.parent.type === "root") {
-          parents.root.push(atRule.parent);
-        }
-        if (atRule.parent.type !== "root") {
-          parents.nested.push(atRule.parent);
-        }
-        atRule.parent[processed] = true;
         return;
       });
-      Object.keys(parents).forEach((type) => {
-        if (!parents[type].length) {
+      if (!parents) {
+        return;
+      }
+      parents = Object.fromEntries(
+        Object.entries(parents).sort(([, a], [, b]) => {
+          return b.depth - a.depth;
+        })
+      );
+      Object.keys(parents).forEach((groupId) => {
+        let { parent } = parents[groupId];
+        let medias = parent.nodes.filter(
+          (node) => node.type === "atrule" && node.name === "media"
+        );
+        if (!medias) {
           return;
         }
-        parents[type].forEach((parent) => {
-          let media = parent.nodes.filter(
-            (n) => n.type === "atrule" && n.name === "media"
-          );
-          if (!media) {
-            return;
-          }
-          let atRules = [];
-          media.forEach((atRule) => {
-            let query = atRule.params;
-            if (!atRules[query]) {
-              atRules[query] = new AtRule({
-                name: atRule.name,
-                params: atRule.params,
-                source: atRule.source
-              });
-            }
-            atRule.nodes.forEach((node) => {
-              atRules[query].append(node);
+        let atRules = [];
+        medias.forEach((atRule) => {
+          if (!atRules[atRule.params]) {
+            atRules[atRule.params] = new AtRule({
+              name: atRule.name,
+              params: atRule.params,
+              source: atRule.source
             });
-            atRule.remove();
+          }
+          [...atRule.nodes].forEach((node) => {
+            atRules[atRule.params].append(node);
           });
-          if (atRules) {
-            sortAtRules(Object.keys(atRules), options, sortCSSmq).forEach((query) => {
-              parent.append(atRules[query]);
-            });
-          }
+          atRule.remove();
+        });
+        if (atRules) {
+          sortAtRules(Object.keys(atRules), options, sortCSSmq).forEach((query) => {
+            parent.append(atRules[query]);
+          });
+        }
+      });
+      root.walkAtRules("media", (parent) => {
+        let medias = parent.nodes.filter(
+          (node) => node.type === "atrule" && node.name === "media"
+        );
+        if (!medias) {
+          return;
+        }
+        medias.forEach((atRule) => {
+          parent.append(atRule);
         });
       });
     }
