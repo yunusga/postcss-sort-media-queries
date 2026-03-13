@@ -261,8 +261,10 @@ See [Releases history]
 ## Thanks
 
 - Andrey Sitnik [@ai](https://github.com/ai)
-- Oleh Dutchenko [@dutchenkoOleg](https://github.com/OlehDutchenko)
+- Oleh Dutchenko [@OlehDutchenko](https://github.com/OlehDutchenko)
 - Jakub Caban [@Lustmored](https://github.com/Lustmored)
 - Dmytro Symonov [@Kassaila](https://github.com/Kassaila)
 - Kai Falkowski [@SassNinja](https://github.com/SassNinja)
 - Khayot Razzakov [@Khayotbek1](https://github.com/Khayotbek1)
+- ReindDooyeweerd [@ReindDooyeweerd](https://github.com/ReindDooyeweerd)
+- msev [@msev](https://github.com/msev)
