@@ -46,7 +46,7 @@
     "build"
   ],
   "scripts": {
-    "test": "vitest run",
+    "test": "npm run build && vitest run",
     "test:watch": "vitest --watch",
     "coverage": "vitest --coverage",
     "lint": "eslint",
