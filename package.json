@@ -1,9 +1,9 @@
 {
   "name": "postcss-sort-media-queries",
   "description": "PostCSS plugin for sorting and combining CSS media queries with mobile first / **desktop first methodologies",
-  "version": "6.1.0",
+  "version": "6.2.2",
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=20.0.0"
   },
   "keywords": [
     "postcss",
@@ -31,7 +31,7 @@
   "bugs": {
     "url": "https://github.com/yunusga/postcss-sort-media-queries/issues"
   },
-  "homepage": "https://github.com/yunusga/postcss-sort-media-queries",
+  "homepage": "https://yunusga.uz/postcss-sort-media-queries",
   "type": "module",
   "main": "src/index.js",
   "module": "src/index.js",
@@ -46,15 +46,21 @@
     "build"
   ],
   "scripts": {
-    "test": "vitest run",
+    "test": "npm run build && vitest run",
     "test:watch": "vitest --watch",
     "coverage": "vitest --coverage",
+    "lint": "eslint",
+    "prepare": "husky",
     "build": "npm run build:cjs",
     "build:cjs": "esbuild src/index.js --outfile=build/index.cjs --format=cjs --bundle --platform=node --external:postcss"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@vitest/coverage-v8": "^4.0.18",
     "esbuild": "^0.27.3",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
+    "husky": "^9.1.7",
     "postcss": "^8.5.6",
     "prettier": "3.8.1",
     "vitest": "^4.0.18"
