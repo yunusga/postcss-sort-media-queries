@@ -1,7 +1,7 @@
 {
   "name": "postcss-sort-media-queries",
   "description": "PostCSS plugin for sorting and combining CSS media queries with mobile first / **desktop first methodologies",
-  "version": "6.2.2",
+  "version": "6.3.2",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -61,11 +61,11 @@
     "eslint": "^10.0.3",
     "globals": "^17.4.0",
     "husky": "^9.1.7",
-    "postcss": "^8.5.6",
     "prettier": "3.8.1",
     "vitest": "^4.0.18"
   },
   "peerDependencies": {
+    "nanoid": "^5.1.6",
     "postcss": "^8.5.6"
   },
   "dependencies": {
