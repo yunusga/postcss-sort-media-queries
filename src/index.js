@@ -1,4 +1,5 @@
 import createSort from 'sort-css-media-queries/create-sort';
+import { randomUUID } from 'crypto';
 
 // PostCSS plugin to sort CSS @media rules according to a configurable order.
 // The plugin groups top-level and nested media at-rules, merges rules
@@ -11,6 +12,16 @@ function sortAtRules(queries, options, sortCSSmq) {
   }
 
   return queries.sort(options.sort);
+}
+
+function getDepth(node) {
+  let depth = 0;
+
+  for (let p = node.parent; p; p = p.parent) {
+    depth++;
+  }
+
+  return depth;
 }
 
 function plugin(options = {}) {
@@ -35,82 +46,86 @@ function plugin(options = {}) {
       // Collect parent nodes that contain media at-rules. We separate
       // top-level (`root`) parents from nested parents so ordering
       // semantics can be preserved independently.
-      let parents = {
-        root: [],
-        nested: [],
-      };
-
-      // Symbol used to mark parents that we've already collected
-      let processed = Symbol('processed');
+      let parents = [];
 
       // Walk all @media at-rules and group their parents
       root.walkAtRules('media', (atRule) => {
-        if (atRule.parent[processed]) {
-          return;
-        }
+        if (!atRule.parent.groupId) {
+          let groupId = randomUUID();
 
-        // If the parent is the root of the document, add to root list
-        if (atRule.parent.type === 'root') {
-          parents.root.push(atRule.parent);
-        }
+          atRule.parent.groupId = groupId;
 
-        // Otherwise treat it as a nested parent
-        if (atRule.parent.type !== 'root') {
-          parents.nested.push(atRule.parent);
+          parents[groupId] = {
+            parent: atRule.parent,
+            depth: getDepth(atRule.parent),
+          }
         }
-
-        // Mark this parent so we don't collect it twice
-        atRule.parent[processed] = true;
 
         return;
       });
 
-      // For each parent group, merge and sort its media at-rules
-      Object.keys(parents).forEach((type) => {
-        if (!parents[type].length) {
+      if (!parents) {
+        return;
+      }
+
+      parents = Object.fromEntries(
+        Object.entries(parents).sort(([, a], [, b]) => {
+          return b.depth - a.depth;
+        })
+      );
+
+      Object.keys(parents).forEach((groupId) => {
+        let { parent } = parents[groupId];
+
+        // Filter only @media nodes from the parent's children
+        let medias = parent.nodes.filter(
+          (node) => node.type === 'atrule' && node.name === 'media'
+        );
+
+        if (!medias) {
           return;
         }
 
-        parents[type].forEach((parent) => {
-          // Filter only @media nodes from the parent's children
-          let media = parent.nodes.filter(
-            n => n.type === 'atrule' && n.name === 'media'
-          );
+        let atRules = [];
 
-          if (!media) {
-            return;
+        medias.forEach((atRule) => {
+          if (!atRules[atRule.params]) {
+            atRules[atRule.params] = new AtRule({
+              name: atRule.name,
+              params: atRule.params,
+              source: atRule.source,
+            });
           }
 
-          // Combine at-rules with identical query params into a single
-          // AtRule instance, cloning their children to preserve content.
-          let atRules = [];
-
-          media.forEach((atRule) => {
-            let query = atRule.params;
-
-            if (!atRules[query]) {
-              atRules[query] = new AtRule({
-                name: atRule.name,
-                params: atRule.params,
-                source: atRule.source
-              });
-            }
-
-            [...atRule.nodes].forEach((node) => {
-              atRules[query].append(node);
-            });
-
-            // Remove the original at-rule since its contents have been
-            // merged into `atRules[query]`.
-            atRule.remove();
+          [...atRule.nodes].forEach((node) => {
+            atRules[atRule.params].append(node);
           });
 
-          // Sort query keys and append merged at-rules back to the parent
-          if (atRules) {
-            sortAtRules(Object.keys(atRules), options, sortCSSmq).forEach((query) => {
-              parent.append(atRules[query]);
-            });
-          }
+          // Remove the original at-rule since its contents have been
+          // merged into `atRules[atRule.params]`.
+          atRule.remove();
+        });
+
+        // Sort query keys and append merged at-rules back to the parent
+        if (atRules) {
+          sortAtRules(Object.keys(atRules), options, sortCSSmq).forEach((query) => {
+            parent.append(atRules[query]);
+          });
+        }
+      });
+
+      root.walkAtRules('media', (parent) => {
+        // Filter only @media nodes from the parent's children
+        let medias = parent.nodes.filter(
+          (node) => node.type === 'atrule' && node.name === 'media'
+        );
+
+        if (!medias) {
+          return;
+        }
+
+        medias.forEach((atRule) => {
+          parent.append(atRule);
         });
       });
     }
