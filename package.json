@@ -61,15 +61,14 @@
     "eslint": "^10.0.3",
     "globals": "^17.4.0",
     "husky": "^9.1.7",
-    "postcss": "^8.5.6",
     "prettier": "3.8.1",
     "vitest": "^4.0.18"
   },
   "peerDependencies": {
+    "nanoid": "^5.1.6",
     "postcss": "^8.5.6"
   },
   "dependencies": {
-    "nanoid": "^5.1.6",
     "sort-css-media-queries": "^3.0.1"
   }
 }
