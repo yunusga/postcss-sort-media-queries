@@ -24,13 +24,13 @@
  - [Examples](#examples)
    - [Mobile first sorting](#mobile-first-sorting)
    - [Desktop first sorting](#desktop-first-sorting)
+   - [Nested media queries sorting](#nested-media-queries-sorting)
  - [Install](#install)
  - [Usage](#usage)
  - [Options](#options)
    - [sort](#sort)
    - [Custom sort function](#custom-sort-function)
    - [Sort configuration](#sort-configuration)
-   - [Only Top Level](#only-top-level)
  - [Changelog](#changelog)
  - [License](#license)
  - [Other PostCSS plugins](#other-postcss-plugins)
@@ -125,6 +125,377 @@ And here is the [Online Demo]
 }
 @media screen and (min-width: 1280px) {
   .desktop-first { color: #cdcdcd }
+}
+```
+
+### Nested media queries sorting
+
+**Before**
+
+```css
+@media (min-width: 710px) {
+  .print-only-global-2 {
+    display: block;
+  }
+}
+
+@media (min-width: 1210px) {
+  .print-only-global-4 {
+    display: block;
+  }
+
+  .print-only-global-5 {
+    display: block;
+  }
+
+  .print-only-global-6 {
+    display: block;
+  }
+}
+
+@media (min-width: 310px) {
+  .print-only-global-1 {
+    display: block;
+  }
+}
+
+@media (min-width: 710px) {
+  .print-only-global-3 {
+    display: block;
+  }
+}
+
+@media (min-width: 1210px) {
+  .print-only-global-7 {
+    display: block;
+  }
+}
+
+@media print {
+  .print-only {
+    display: block;
+  }
+
+  .print-only-parent-1 {
+    display: block;
+  }
+
+  @media (orientation: landscape) {
+    .print-only {
+      color: black;
+    }
+
+    @media (min-width: 910px) {
+      .nested-landscape-3 {
+        color: black;
+      }
+
+      .nested-landscape-4 {
+        color: black;
+      }
+
+      .nested-landscape-5 {
+        color: black;
+      }
+    }
+
+    @media (min-width: 810px) {
+      .nested-landscape-2 {
+        color: black;
+      }
+    }
+
+    @media (min-width: 710px) {
+      .nested-landscape-1 {
+        color: black;
+      }
+    }
+
+    .nested-landscape-0 {
+      color: black;
+    }
+
+    @media (min-width: 710px) {
+      .nested-landscape-4 {
+        color: black;
+      }
+
+      .nested-landscape-5 {
+        color: black;
+      }
+
+      .nested-landscape-6 {
+        color: black;
+      }
+    }
+
+    @media (min-width: 710px) {
+      .nested-landscape-8 {
+        color: black;
+      }
+
+      .nested-landscape-9 {
+        color: black;
+      }
+    }
+  }
+
+  @media (min-width: 500px) {
+    .print-only {
+      color: black;
+    }
+  }
+
+  .print-only-parent-2 {
+    display: block;
+  }
+
+  @media (min-width: 500px) {
+    .print-only {
+      color: black;
+    }
+  }
+
+  @media (orientation: portrait) {
+    .print-only {
+      color: gray;
+    }
+  }
+
+  .print-only-parent-3 {
+    display: block;
+  }
+
+  @media (min-width: 320px) {
+    .print-only {
+      color: black;
+    }
+  }
+
+  @media (orientation: landscape) {
+    .print-only-landscape-1-1 {
+      color: gray;
+    }
+
+    .print-only-landscape-1-2 {
+      color: gray;
+    }
+
+    .print-only-landscape-1-3 {
+      color: gray;
+    }
+  }
+}
+
+@layer base {
+
+  @media (min-width: 1220px) {
+    .print-only-1200-1 {
+      color: black;
+    }
+  }
+
+  @media (min-width: 320px) {
+    .print-only-320-1 {
+      color: black;
+    }
+  }
+
+  @media (min-width: 1220px) {
+    .print-only-1200-2 {
+      color: black;
+    }
+  }
+
+  @media (min-width: 620px) {
+    .print-only-640-1 {
+      color: black;
+    }
+  }
+
+  @media (min-width: 320px) {
+    .print-only-320-2 {
+      color: black;
+    }
+  }
+
+  @media (min-width: 320px) {
+    .print-only-320-3 {
+      color: black;
+    }
+  }
+
+  @media (min-width: 620px) {
+    .print-only-640-2 {
+      color: black;
+    }
+  }
+}
+```
+
+**After**
+
+```css
+@layer base {
+  @media (min-width: 320px) {
+    .print-only-320-1 {
+      color: black;
+    }
+    .print-only-320-2 {
+      color: black;
+    }
+    .print-only-320-3 {
+      color: black;
+    }
+  }
+  @media (min-width: 620px) {
+    .print-only-640-1 {
+      color: black;
+    }
+    .print-only-640-2 {
+      color: black;
+    }
+  }
+  @media (min-width: 1220px) {
+    .print-only-1200-1 {
+      color: black;
+    }
+    .print-only-1200-2 {
+      color: black;
+    }
+  }
+}
+@media (min-width: 310px) {
+  .print-only-global-1 {
+    display: block;
+  }
+}
+@media (min-width: 710px) {
+  .print-only-global-2 {
+    display: block;
+  }
+  .print-only-global-3 {
+    display: block;
+  }
+}
+@media (min-width: 1210px) {
+  .print-only-global-4 {
+    display: block;
+  }
+
+  .print-only-global-5 {
+    display: block;
+  }
+
+  .print-only-global-6 {
+    display: block;
+  }
+  .print-only-global-7 {
+    display: block;
+  }
+}
+@media print {
+  .print-only {
+    display: block;
+  }
+
+  .print-only-parent-1 {
+    display: block;
+  }
+
+  .print-only-parent-2 {
+    display: block;
+  }
+
+  .print-only-parent-3 {
+    display: block;
+  }
+
+  @media (min-width: 320px) {
+    .print-only {
+      color: black;
+    }
+  }
+
+  @media (min-width: 500px) {
+    .print-only {
+      color: black;
+    }
+    .print-only {
+      color: black;
+    }
+  }
+
+  @media (orientation: landscape) {
+    .print-only {
+      color: black;
+    }
+
+    .nested-landscape-0 {
+      color: black;
+    }
+    .print-only-landscape-1-1 {
+      color: gray;
+    }
+
+    .print-only-landscape-1-2 {
+      color: gray;
+    }
+
+    .print-only-landscape-1-3 {
+      color: gray;
+    }
+
+    @media (min-width: 710px) {
+      .nested-landscape-1 {
+        color: black;
+      }
+      .nested-landscape-4 {
+        color: black;
+      }
+
+      .nested-landscape-5 {
+        color: black;
+      }
+
+      .nested-landscape-6 {
+        color: black;
+      }
+      .nested-landscape-8 {
+        color: black;
+      }
+
+      .nested-landscape-9 {
+        color: black;
+      }
+    }
+
+    @media (min-width: 810px) {
+      .nested-landscape-2 {
+        color: black;
+      }
+    }
+
+    @media (min-width: 910px) {
+      .nested-landscape-3 {
+        color: black;
+      }
+
+      .nested-landscape-4 {
+        color: black;
+      }
+
+      .nested-landscape-5 {
+        color: black;
+      }
+    }
+  }
+
+  @media (orientation: portrait) {
+    .print-only {
+      color: gray;
+    }
+  }
 }
 ```
 
