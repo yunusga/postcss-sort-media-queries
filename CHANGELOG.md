@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.3.2] 2026-03-13
+
+- Add **nested media queries** support
+- Remove **onlyTopLevel** (no problem with nested queries)
+- Add ESM and CJS support without breaking changes
+
 ## [5.2.0] 2023-05-30
 
 - Add [`onlyTopLevel`](README.md#only-top-level) option prevent eject nested media queries from parent
