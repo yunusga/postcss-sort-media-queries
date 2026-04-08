@@ -14,494 +14,33 @@
 
 🌏 **English** ▫ [**O'zbek**](README-UZ.md)
 
-[PostCSS] plugin for sorting and combining CSS media queries with **mobile first** / **desktop first** methodologies.
+**PostcSS Sort Qedia Queries** is a powerful and flexible [PostCSS] plugin for sorting and combining CSS media queries using **mobile-first** or **desktop-first** methodologies. It helps maintain a clean, predictable stylesheet structure, improves readability, and prevents unexpected style overrides.
 
-> From v6.0.0 plugin supported nested media queries and ESM usage
+A key advantage of this plugin is its **full support for nested media queries**, ensuring correct processing and ordering even in complex, deeply structured stylesheets. This makes it perfectly suited for modern CSS workflows that rely on nesting via PostCSS or preprocessor-like patterns.
+
+In addition, the plugin fully supports **CSS Media Queries Level 4**, including modern **range syntax**.
+
+Sorting works based on [OlehDutchenko/sort-css-media-queries](https://github.com/OlehDutchenko/sort-css-media-queries).
 
 ## Table of Contents
 
- - [Online demo](#online-demo)
- - [Examples](#examples)
-   - [Mobile first sorting](#mobile-first-sorting)
-   - [Desktop first sorting](#desktop-first-sorting)
-   - [Nested media queries sorting](#nested-media-queries-sorting)
  - [Install](#install)
  - [Usage](#usage)
  - [Options](#options)
    - [sort](#sort)
    - [Custom sort function](#custom-sort-function)
    - [Sort configuration](#sort-configuration)
+ - [Online demo](#online-demo)
+ - [Examples (with nested media queries)](#examples)
+   - [Sorting options](#mobile-first-sorting)
+   - [Desktop first sorting](#desktop-first-sorting)
  - [Changelog](#changelog)
  - [License](#license)
  - [Other PostCSS plugins](#other-postcss-plugins)
  - [Thanks 💪](#thanks)
 
-## Online demo
-
-And here is the [Online Demo]
-
-## Examples
-
-### Mobile first sorting
-
-**Before**
-
-```css
-@media (min-width: 1400px) {}
-@media (min-width: 1200px) {}
-
-@layer reset {
-
-  @media (min-width: 1200px) {
-    @media (min-width: 992px) {}
-    @media (min-width: 768px) {}
-  }
-
-  @media (min-width: 768px) {
-    @media (min-width: 640px) {}
-    @media (min-width: 320px) {}
-  }
-}
-```
-
-**After**
-
-```css
-@layer reset {
-
-  @media (min-width: 768px) {
-    @media (min-width: 320px) {}
-    @media (min-width: 640px) {}
-  }
-
-  @media (min-width: 1200px) {
-    @media (min-width: 768px) {}
-    @media (min-width: 992px) {}
-  }
-}
-
-@media (min-width: 1200px) {}
-@media (min-width: 1400px) {}
-```
-
-### Desktop first sorting
-
-**Before**
-```css
-@media screen and (width < 640px) {
-  .header { color: #cdcdcd }
-}
-@media screen and (min-width: 760px) {
-  .desktop-first { color: #cdcdcd }
-}
-@media screen and (width < 640px) {
-  .main { color: #cdcdcd }
-}
-@media screen and (min-width: 1280px) {
-  .desktop-first { color: #cdcdcd }
-}
-@media screen and (max-width: 760px) {
-  .footer { color: #cdcdcd }
-}
-@media screen and (max-width: 640px) {
-  .footer { color: #cdcdcd }
-}
-```
-
-**After**
-
-```css
-@media screen and (max-width: 760px) {
-  .footer { color: #cdcdcd }
-}
-@media screen and (width < 640px) {
-  /* combined */
-  .header { color: #cdcdcd }
-  .main { color: #cdcdcd }
-  .footer { color: #cdcdcd }
-}
-@media screen and (min-width: 760px) {
-  .desktop-first { color: #cdcdcd }
-}
-@media screen and (min-width: 1280px) {
-  .desktop-first { color: #cdcdcd }
-}
-```
-
-### Nested media queries sorting
-
-**Before**
-
-```css
-@media (min-width: 710px) {
-  .print-only-global-2 {
-    display: block;
-  }
-}
-
-@media (min-width: 1210px) {
-  .print-only-global-4 {
-    display: block;
-  }
-
-  .print-only-global-5 {
-    display: block;
-  }
-
-  .print-only-global-6 {
-    display: block;
-  }
-}
-
-@media (min-width: 310px) {
-  .print-only-global-1 {
-    display: block;
-  }
-}
-
-@media (min-width: 710px) {
-  .print-only-global-3 {
-    display: block;
-  }
-}
-
-@media (min-width: 1210px) {
-  .print-only-global-7 {
-    display: block;
-  }
-}
-
-@media print {
-  .print-only {
-    display: block;
-  }
-
-  .print-only-parent-1 {
-    display: block;
-  }
-
-  @media (orientation: landscape) {
-    .print-only {
-      color: black;
-    }
-
-    @media (min-width: 910px) {
-      .nested-landscape-3 {
-        color: black;
-      }
-
-      .nested-landscape-4 {
-        color: black;
-      }
-
-      .nested-landscape-5 {
-        color: black;
-      }
-    }
-
-    @media (min-width: 810px) {
-      .nested-landscape-2 {
-        color: black;
-      }
-    }
-
-    @media (min-width: 710px) {
-      .nested-landscape-1 {
-        color: black;
-      }
-    }
-
-    .nested-landscape-0 {
-      color: black;
-    }
-
-    @media (min-width: 710px) {
-      .nested-landscape-4 {
-        color: black;
-      }
-
-      .nested-landscape-5 {
-        color: black;
-      }
-
-      .nested-landscape-6 {
-        color: black;
-      }
-    }
-
-    @media (min-width: 710px) {
-      .nested-landscape-8 {
-        color: black;
-      }
-
-      .nested-landscape-9 {
-        color: black;
-      }
-    }
-  }
-
-  @media (min-width: 500px) {
-    .print-only {
-      color: black;
-    }
-  }
-
-  .print-only-parent-2 {
-    display: block;
-  }
-
-  @media (min-width: 500px) {
-    .print-only {
-      color: black;
-    }
-  }
-
-  @media (orientation: portrait) {
-    .print-only {
-      color: gray;
-    }
-  }
-
-  .print-only-parent-3 {
-    display: block;
-  }
-
-  @media (min-width: 320px) {
-    .print-only {
-      color: black;
-    }
-  }
-
-  @media (orientation: landscape) {
-    .print-only-landscape-1-1 {
-      color: gray;
-    }
-
-    .print-only-landscape-1-2 {
-      color: gray;
-    }
-
-    .print-only-landscape-1-3 {
-      color: gray;
-    }
-  }
-}
-
-@layer base {
-
-  @media (min-width: 1220px) {
-    .print-only-1200-1 {
-      color: black;
-    }
-  }
-
-  @media (min-width: 320px) {
-    .print-only-320-1 {
-      color: black;
-    }
-  }
-
-  @media (min-width: 1220px) {
-    .print-only-1200-2 {
-      color: black;
-    }
-  }
-
-  @media (min-width: 620px) {
-    .print-only-640-1 {
-      color: black;
-    }
-  }
-
-  @media (min-width: 320px) {
-    .print-only-320-2 {
-      color: black;
-    }
-  }
-
-  @media (min-width: 320px) {
-    .print-only-320-3 {
-      color: black;
-    }
-  }
-
-  @media (min-width: 620px) {
-    .print-only-640-2 {
-      color: black;
-    }
-  }
-}
-```
-
-**After**
-
-```css
-@layer base {
-  @media (min-width: 320px) {
-    .print-only-320-1 {
-      color: black;
-    }
-    .print-only-320-2 {
-      color: black;
-    }
-    .print-only-320-3 {
-      color: black;
-    }
-  }
-  @media (min-width: 620px) {
-    .print-only-640-1 {
-      color: black;
-    }
-    .print-only-640-2 {
-      color: black;
-    }
-  }
-  @media (min-width: 1220px) {
-    .print-only-1200-1 {
-      color: black;
-    }
-    .print-only-1200-2 {
-      color: black;
-    }
-  }
-}
-@media (min-width: 310px) {
-  .print-only-global-1 {
-    display: block;
-  }
-}
-@media (min-width: 710px) {
-  .print-only-global-2 {
-    display: block;
-  }
-  .print-only-global-3 {
-    display: block;
-  }
-}
-@media (min-width: 1210px) {
-  .print-only-global-4 {
-    display: block;
-  }
-
-  .print-only-global-5 {
-    display: block;
-  }
-
-  .print-only-global-6 {
-    display: block;
-  }
-  .print-only-global-7 {
-    display: block;
-  }
-}
-@media print {
-  .print-only {
-    display: block;
-  }
-
-  .print-only-parent-1 {
-    display: block;
-  }
-
-  .print-only-parent-2 {
-    display: block;
-  }
-
-  .print-only-parent-3 {
-    display: block;
-  }
-
-  @media (min-width: 320px) {
-    .print-only {
-      color: black;
-    }
-  }
-
-  @media (min-width: 500px) {
-    .print-only {
-      color: black;
-    }
-    .print-only {
-      color: black;
-    }
-  }
-
-  @media (orientation: landscape) {
-    .print-only {
-      color: black;
-    }
-
-    .nested-landscape-0 {
-      color: black;
-    }
-    .print-only-landscape-1-1 {
-      color: gray;
-    }
-
-    .print-only-landscape-1-2 {
-      color: gray;
-    }
-
-    .print-only-landscape-1-3 {
-      color: gray;
-    }
-
-    @media (min-width: 710px) {
-      .nested-landscape-1 {
-        color: black;
-      }
-      .nested-landscape-4 {
-        color: black;
-      }
-
-      .nested-landscape-5 {
-        color: black;
-      }
-
-      .nested-landscape-6 {
-        color: black;
-      }
-      .nested-landscape-8 {
-        color: black;
-      }
-
-      .nested-landscape-9 {
-        color: black;
-      }
-    }
-
-    @media (min-width: 810px) {
-      .nested-landscape-2 {
-        color: black;
-      }
-    }
-
-    @media (min-width: 910px) {
-      .nested-landscape-3 {
-        color: black;
-      }
-
-      .nested-landscape-4 {
-        color: black;
-      }
-
-      .nested-landscape-5 {
-        color: black;
-      }
-    }
-  }
-
-  @media (orientation: portrait) {
-    .print-only {
-      color: gray;
-    }
-  }
-}
-```
-
 ## Install
 
-First thing's, install the module:
 
 ```
 npm install postcss postcss-sort-media-queries --save-dev
@@ -528,9 +67,8 @@ If you already use PostCSS, add the plugin to plugins list:
 module.exports = {
   plugins: [
 +   require('postcss-sort-media-queries')({
-+     sort: 'mobile-first', // default value
++     sort: 'mobile-first' | 'desktop-first' | function // default ('mobile-first')
 +   }),
-    require('autoprefixer')
   ]
 }
 ```
@@ -544,7 +82,6 @@ module.exports = {
 +        // custom sorting function
 +     }
 +   }),
-    require('autoprefixer')
   ]
 }
 ```
@@ -554,9 +91,9 @@ and set this plugin in settings.
 
 ## Options
 
-> Sorting works based on [OlehDutchenko/sort-css-media-queries](https://github.com/OlehDutchenko/sort-css-media-queries) function.
+> Sorting works based on [OlehDutchenko/sort-css-media-queries](https://github.com/OlehDutchenko/sort-css-media-queries)
 
-### sort
+### Sort
 
 This option support **string** or **function** values.
 
@@ -564,26 +101,15 @@ This option support **string** or **function** values.
 - `{string}` `'desktop-first'` - desktop first sorting
 - `{function}` your own sorting function
 
-#### `'mobile-first'`
+#### `'mobile-first'` or `'desktop-first'`
 
 ```js
 postcss([
   sortMediaQueries({
-    sort: 'mobile-first' // default
+    sort: 'mobile-first' | 'desktop-first' // default (mobile-first)
   })
 ]).process(css);
 ```
-
-#### `'desktop-first'`
-
-```js
-postcss([
-  sortMediaQueries({
-    sort: 'desktop-first'
-  })
-]).process(css);
-```
-
 ### Custom sort function
 ```js
 postcss([
@@ -615,6 +141,78 @@ postcss([
 
 Or alternatively create a `sort-css-mq.config.json` file in the root of your project. Or add property `sortCssMQ: {}` in your `package.json`.
 
+## Online demo
+
+And here is the [Online Demo]
+
+## Examples
+
+### Mobile first sorting (with nested media queries)
+
+#### Before
+
+```bash
+root
+│
+├── (min-width: 1400px)
+├── (min-width: 1200px)
+│
+└── @layer reset
+   │
+   ├── (min-width: 1200px)
+   │   ├── (min-width: 992px)
+   │   └── (min-width: 768px)
+   │
+   └── (min-width: 768px)
+       ├── (min-width: 640px)
+       └── (min-width: 320px)
+```
+
+#### After
+
+```bash
+root
+│
+├── @layer reset
+│  │
+│  ├── (min-width: 768px)
+│  │   ├── (min-width: 320px)
+│  │   └── (min-width: 640px)
+│  │
+│  └── (min-width: 1200px)
+│      ├── (min-width: 768px)
+│      └── (min-width: 992px)
+│
+├── (min-width: 1200px)
+└── (min-width: 1400px)
+```
+
+### Desktop first sorting
+
+**Before**
+```css
+root
+│
+├── (width < 640px)
+├── (min-width: 760px)
+├── (width < 640px)
+├── (min-width: 1280px)
+├── (max-width: 760px)
+└── (max-width: 640px)
+```
+
+**After**
+
+```bash
+root
+│
+├── (min-width: 760px)
+├── (max-width: 640px)
+├── (width < 640px)
+├── (max-width: 760px)
+└── (min-width: 1280px)
+```
+
 ---
 
 ## Changelog
@@ -627,7 +225,7 @@ See [Releases history]
 
 ## Other PostCSS plugins
 
-- [`postcss-momentum-scrolling`](https://github.com/solversgroup/postcss-momentum-scrolling) - plugin for adding **momentum** style scrolling behavior (`-webkit-overflow-scrolling:touch`) for elements with overflow (scroll, auto) on iOS
+- [`postcss-momentum-scrolling`](https://github.com/solversgroup/postcss-momentum-scrolling) - plugin for adding **momentum** style scrolling behavior (`-webkit-overflow-scrolling:touch`) for elements with overflow (scroll, auto) on iOS (**deprecated for modern Safari**)
 
 ## Thanks
 
