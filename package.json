@@ -44,7 +44,8 @@
     }
   },
   "files": [
-    "build"
+    "build",
+    "src"
   ],
   "scripts": {
     "test": "npm run build && vitest run",
@@ -70,6 +71,6 @@
     "postcss": "^8.5.6"
   },
   "dependencies": {
-    "sort-css-media-queries": "^3.0.3"
+    "sort-css-media-queries": "^3.0.5"
   }
 }
