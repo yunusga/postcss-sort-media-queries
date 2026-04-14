@@ -355,3 +355,4 @@ Quyidagi insonlar loyiha rivojiga hissa qo'shgan:
 - Khayot Razzakov [@Khayotbek1](https://github.com/Khayotbek1)
 - ReindDooyeweerd [@ReindDooyeweerd](https://github.com/ReindDooyeweerd)
 - msev [@msev](https://github.com/msev)
+- ajiho [@ajiho](https://github.com/ajiho)
