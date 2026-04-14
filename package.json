@@ -44,8 +44,7 @@
     }
   },
   "files": [
-    "build",
-    "src"
+    "dist"
   ],
   "scripts": {
     "test": "npm run build && vitest run",
