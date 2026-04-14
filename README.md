@@ -1,9 +1,9 @@
 # PostCSS Sort Media Queries
 
-[PostCSS]:          https://github.com/postcss/postcss
-[official docs]:    https://github.com/postcss/postcss#usage
-[Online Demo]:      https://yunusga.uz/postcss-sort-media-queries/
-[MIT]:              https://github.com/yunusga/postcss-sort-media-queries/blob/master/LICENSE
+[PostCSS]: https://github.com/postcss/postcss
+[official docs]: https://github.com/postcss/postcss#usage
+[Online Demo]: https://yunusga.uz/postcss-sort-media-queries/
+[MIT]: https://github.com/yunusga/postcss-sort-media-queries/blob/master/LICENSE
 [Releases history]: https://github.com/yunusga/postcss-sort-media-queries/blob/master/CHANGELOG.md
 
 [![npm](https://img.shields.io/npm/v/postcss-sort-media-queries.svg)](https://www.npmjs.com/package/postcss-sort-media-queries) [![Node.js CI](https://github.com/yunusga/postcss-sort-media-queries/actions/workflows/test.yml/badge.svg?branch=main&event=status)](https://github.com/yunusga/postcss-sort-media-queries/actions/workflows/test.yml)
@@ -12,7 +12,7 @@
 
 <img src="logo.svg?sanitize=true" align="right" title="PostCSS sort media queries logotype" width="100" height="100">
 
-🌏 **English** ▫ [**O'zbek**](README-UZ.md)
+🌏 **English** ▫ [**O'zbek**](README-UZ.md) ▫ [**简体中文**](README-ZH.md)
 
 **PostcSS Sort Qedia Queries** is a powerful and flexible [PostCSS] plugin for sorting and combining CSS media queries using **mobile-first** or **desktop-first** methodologies. It helps maintain a clean, predictable stylesheet structure, improves readability, and prevents unexpected style overrides.
 
@@ -24,23 +24,22 @@ Sorting works based on [OlehDutchenko/sort-css-media-queries](https://github.com
 
 ## Table of Contents
 
- - [Install](#install)
- - [Usage](#usage)
- - [Options](#options)
-   - [sort](#sort)
-   - [Custom sort function](#custom-sort-function)
-   - [Sort configuration](#sort-configuration)
- - [Online demo](#online-demo)
- - [Examples (with nested media queries)](#examples)
-   - [Sorting options](#mobile-first-sorting)
-   - [Desktop first sorting](#desktop-first-sorting)
- - [Changelog](#changelog)
- - [License](#license)
- - [Other PostCSS plugins](#other-postcss-plugins)
- - [Thanks 💪](#thanks)
+- [Install](#install)
+- [Usage](#usage)
+- [Options](#options)
+  - [sort](#sort)
+  - [Custom sort function](#custom-sort-function)
+  - [Sort configuration](#sort-configuration)
+- [Online demo](#online-demo)
+- [Examples (with nested media queries)](#examples)
+  - [Sorting options](#mobile-first-sorting)
+  - [Desktop first sorting](#desktop-first-sorting)
+- [Changelog](#changelog)
+- [License](#license)
+- [Other PostCSS plugins](#other-postcss-plugins)
+- [Thanks 💪](#thanks)
 
 ## Install
-
 
 ```
 npm install postcss postcss-sort-media-queries --save-dev
@@ -52,13 +51,12 @@ Check you project for existed PostCSS config: `postcss.config.js`
 in the project root, `"postcss"` section in `package.json`
 or `postcss` in bundle config.
 
-
 ```js
 // CJS
-let sortCssMq = require('postcss-sort-media-queries');
+let sortCssMq = require("postcss-sort-media-queries");
 
 // ESM
-import sortCssMq from 'postcss-sort-media-queries';
+import sortCssMq from "postcss-sort-media-queries";
 ```
 
 If you already use PostCSS, add the plugin to plugins list:
@@ -74,6 +72,7 @@ module.exports = {
 ```
 
 or with custom sort function
+
 ```diff
 module.exports = {
   plugins: [
@@ -106,18 +105,20 @@ This option support **string** or **function** values.
 ```js
 postcss([
   sortMediaQueries({
-    sort: 'mobile-first' | 'desktop-first' // default (mobile-first)
-  })
+    sort: "mobile-first" | "desktop-first", // default (mobile-first)
+  }),
 ]).process(css);
 ```
+
 ### Custom sort function
+
 ```js
 postcss([
   sortMediaQueries({
     function(a, b) {
       return a.localeCompare(b);
-    }
-  })
+    },
+  }),
 ]).process(css);
 ```
 
@@ -134,8 +135,8 @@ postcss([
   sortMediaQueries({
     configuration: {
       unitlessMqAlwaysFirst: true, // or false
-    }
-  })
+    },
+  }),
 ]).process(css);
 ```
 
@@ -190,6 +191,7 @@ root
 ### Desktop first sorting
 
 **Before**
+
 ```css
 root
 │
