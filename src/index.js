@@ -1,5 +1,5 @@
-import createSort from 'sort-css-media-queries/create-sort';
-import { nanoid } from 'nanoid';
+import createSort from "sort-css-media-queries/create-sort";
+import { nanoid } from "nanoid";
 
 // PostCSS plugin to sort CSS @media rules according to a configurable order.
 // The plugin groups top-level and nested media at-rules, merges rules
@@ -7,8 +7,9 @@ import { nanoid } from 'nanoid';
 
 // Helper that ensures `options.sort` is a function and sorts queries.
 function sortAtRules(queries, options, sortCSSmq) {
-  if (typeof options.sort !== 'function') {
-    options.sort = options.sort === 'desktop-first' ? sortCSSmq.desktopFirst : sortCSSmq;
+  if (typeof options.sort !== "function") {
+    options.sort =
+      options.sort === "desktop-first" ? sortCSSmq.desktopFirst : sortCSSmq;
   }
 
   return queries.sort(options.sort);
@@ -25,21 +26,20 @@ function getDepth(node) {
 }
 
 function plugin(options = {}) {
-
   // Set default options and allow user overrides
   options = Object.assign(
     {
-      sort: 'mobile-first',
+      sort: "mobile-first",
       configuration: false,
     },
-    options
+    options,
   );
 
   // Create a sorter based on configuration (from sort-css-media-queries)
   const sortCSSmq = createSort(options.configuration);
 
   return {
-    postcssPlugin: 'postcss-sort-media-queries',
+    postcssPlugin: "postcss-sort-media-queries",
 
     // Execute once after the entire tree has been parsed
     OnceExit(root, { AtRule }) {
@@ -49,7 +49,7 @@ function plugin(options = {}) {
       let parents = [];
 
       // Walk all @media at-rules and group their parents
-      root.walkAtRules('media', (atRule) => {
+      root.walkAtRules("media", (atRule) => {
         if (!atRule.parent.groupId) {
           let groupId = nanoid();
 
@@ -58,7 +58,7 @@ function plugin(options = {}) {
           parents[groupId] = {
             parent: atRule.parent,
             depth: getDepth(atRule.parent),
-          }
+          };
         }
 
         return;
@@ -71,7 +71,7 @@ function plugin(options = {}) {
       parents = Object.fromEntries(
         Object.entries(parents).sort(([, a], [, b]) => {
           return b.depth - a.depth;
-        })
+        }),
       );
 
       Object.keys(parents).forEach((groupId) => {
@@ -79,7 +79,7 @@ function plugin(options = {}) {
 
         // Filter only @media nodes from the parent's children
         let medias = parent.nodes.filter(
-          (node) => node.type === 'atrule' && node.name === 'media'
+          (node) => node.type === "atrule" && node.name === "media",
         );
 
         if (!medias) {
@@ -108,16 +108,18 @@ function plugin(options = {}) {
 
         // Sort query keys and append merged at-rules back to the parent
         if (atRules) {
-          sortAtRules(Object.keys(atRules), options, sortCSSmq).forEach((query) => {
-            parent.append(atRules[query]);
-          });
+          sortAtRules(Object.keys(atRules), options, sortCSSmq).forEach(
+            (query) => {
+              parent.append(atRules[query]);
+            },
+          );
         }
       });
 
-      root.walkAtRules('media', (parent) => {
+      root.walkAtRules("media", (parent) => {
         // Filter only @media nodes from the parent's children
         let medias = parent.nodes.filter(
-          (node) => node.type === 'atrule' && node.name === 'media'
+          (node) => node.type === "atrule" && node.name === "media",
         );
 
         if (!medias) {
@@ -128,7 +130,7 @@ function plugin(options = {}) {
           parent.append(atRule);
         });
       });
-    }
+    },
   };
 }
 

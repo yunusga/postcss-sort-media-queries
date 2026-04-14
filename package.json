@@ -52,6 +52,7 @@
     "test:watch": "vitest --watch",
     "coverage": "vitest --coverage",
     "lint": "eslint",
+    "format": "prettier --write .",
     "prepare": "husky",
     "build": "npm run build:cjs && cpy \"src/**/*\" dist",
     "build:cjs": "esbuild src/index.js --outfile=dist/index.cjs --format=cjs --bundle --platform=node --external:postcss"
