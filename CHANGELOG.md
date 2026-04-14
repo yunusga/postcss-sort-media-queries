@@ -34,7 +34,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added README translation to oz'bek language
   - thanks to @Khayotbek1 for the PR https://github.com/yunusga/postcss-sort-media-queries/pull/46
 
-
 ## [4.4.0] 2023-04-22
 
 - Added README translation to oz'bek language
@@ -175,126 +174,126 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.1.9] - 2020-09-27
 
- - Remove yarn.lock
- - Forget say thanks for Andrey Sitnik!
- - Fix Travis-CI build config
+- Remove yarn.lock
+- Forget say thanks for Andrey Sitnik!
+- Fix Travis-CI build config
 
 ## [2.1.6] - 2020-09-27
 
- - Remove .gitattributes and CHANGELOG.md from npm package
+- Remove .gitattributes and CHANGELOG.md from npm package
 
 ## [2.1.5] - 2020-09-27
 
- - PostCSS 8.1 compatability
- - Fixed line endings for test files
+- PostCSS 8.1 compatability
+- Fixed line endings for test files
 
 ## [2.0.3] - 2020-09-24
 
- - Remove `coverage` directory from npm package
- - Forget say thanks for Jakub Caban!
- - Removed clean-publish dependecie security reason
- - Update yarn.lock
+- Remove `coverage` directory from npm package
+- Forget say thanks for Jakub Caban!
+- Removed clean-publish dependecie security reason
+- Update yarn.lock
 
 ## [2.0.0] - 2020-09-24
 
- - Migrate to PostCSS 8
+- Migrate to PostCSS 8
 
 ## [1.7.26] - 2020-09-12
 
- - Update dependencies
+- Update dependencies
 
 ## [1.7.25] - 2020-07-17
 
- - Update dependencies
+- Update dependencies
 
 ## [1.7.24] - 2020-07-07
 
- - Update dependencies
+- Update dependencies
 
 ## [1.6.24] - 2020-06-06
 
- - Update dependencies
+- Update dependencies
 
 ## [1.5.24] - 2020-05-22
 
- - Update dev dependencies
+- Update dev dependencies
 
 ## [1.4.24] - 2020-04-15
 
- - Update dev dependencies
+- Update dev dependencies
 
 ## [1.4.23] - 2020-03-24
 
- - Fix check sort property #20
- - Update dev dependencies
+- Fix check sort property #20
+- Update dev dependencies
 
 ## [1.3.22] - 2020-03-15
 
- - Update dev dependencies
+- Update dev dependencies
 
 ## [1.3.21] - 2020-02-19
 
- - Update dependencies
- - Add `yarn.lock`
+- Update dependencies
+- Add `yarn.lock`
 
 ## [1.1.20] - 2020-02-05
 
- - travis ci strange cache old files
+- travis ci strange cache old files
 
 ## [1.1.19] - 2020-02-04
 
- - No reasons for update, just informations fixes
+- No reasons for update, just informations fixes
 
 ## [1.1.18] - 2020-02-03
 
- - index.test.js eslint fix
- - Update dev dependencies
+- index.test.js eslint fix
+- Update dev dependencies
 
 ## [1.1.16] - 2020-01-28
 
 ### Bumps
 
- - postcss `^7.0.23` → `^7.0.26`
- - @logux/eslint-config `^35.0.0` → `^35.0.3`
- - eslint `^6.7.0` → `^6.8.0`
- - eslint-plugin-import `^2.18.2` → `^2.20.0`
- - eslint-plugin-jest `^23.0.4` → `^23.6.0`
- - eslint-plugin-node `^10.0.0` → `^11.0.0`
- - eslint-plugin-unicorn `^13.0.0` → `^15.0.1`
- - jest `^24.9.0` → `^25.1.0`
+- postcss `^7.0.23` → `^7.0.26`
+- @logux/eslint-config `^35.0.0` → `^35.0.3`
+- eslint `^6.7.0` → `^6.8.0`
+- eslint-plugin-import `^2.18.2` → `^2.20.0`
+- eslint-plugin-jest `^23.0.4` → `^23.6.0`
+- eslint-plugin-node `^10.0.0` → `^11.0.0`
+- eslint-plugin-unicorn `^13.0.0` → `^15.0.1`
+- jest `^24.9.0` → `^25.1.0`
 
 ## [1.0.15] - 2019-12-12
 
 ### Added
 
- - `test/`, `index.test.js` to .npmignore to reduce package size
+- `test/`, `index.test.js` to .npmignore to reduce package size
 
 ### Bumps
 
- - eslint-plugin-import from 2.19.0 to 2.19.1
+- eslint-plugin-import from 2.19.0 to 2.19.1
 
 ## [1.0.13] - 2019-12-09
 
 ### Bumps
 
- - postcss from 7.0.23 to 7.0.24
- - eslint-plugin-import from 2.18.2 to 2.19.0
- - eslint from 6.7.1 to 6.7.2
- - eslint-plugin-jest from 23.0.5 to 23.1.1
+- postcss from 7.0.23 to 7.0.24
+- eslint-plugin-import from 2.18.2 to 2.19.0
+- eslint from 6.7.1 to 6.7.2
+- eslint-plugin-jest from 23.0.5 to 23.1.1
 
 ## [1.0.9] - 2019-10-29
 
 ### Bumps
 
- - @logux/eslint-config from 34.0.1 to 35.0.0
- - sort-css-media-queries from 1.4.3 to 1.5.0
+- @logux/eslint-config from 34.0.1 to 35.0.0
+- sort-css-media-queries from 1.4.3 to 1.5.0
 
 ## [1.0.7] - 2019-10-25
 
 ### Bumps
 
- - eslint from 6.7.0 to 6.7.1
- - eslint-plugin-jest from 23.0.4 to 23.0.5
+- eslint from 6.7.0 to 6.7.1
+- eslint-plugin-jest from 23.0.4 to 23.0.5
 
 ## [1.0.5] - 2019-10-25
 

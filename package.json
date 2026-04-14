@@ -37,27 +37,29 @@
   "module": "src/index.js",
   "exports": {
     ".": {
-      "types": "./src/index.d.ts",
-      "require": "./build/wrapper.cjs",
-      "import": "./src/index.js",
-      "default": "./src/index.js"
+      "types": "./dist/index.d.ts",
+      "require": "./dist/wrapper.cjs",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
     }
   },
   "files": [
-    "build"
+    "dist"
   ],
   "scripts": {
     "test": "npm run build && vitest run",
     "test:watch": "vitest --watch",
     "coverage": "vitest --coverage",
     "lint": "eslint",
+    "format": "prettier --write .",
     "prepare": "husky",
-    "build": "npm run build:cjs",
-    "build:cjs": "esbuild src/index.js --outfile=build/index.cjs --format=cjs --bundle --platform=node --external:postcss"
+    "build": "npm run build:cjs && cpy \"src/**/*\" dist",
+    "build:cjs": "esbuild src/index.js --outfile=dist/index.cjs --format=cjs --bundle --platform=node --external:postcss"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@vitest/coverage-v8": "^4.1.2",
+    "cpy-cli": "^7.0.0",
     "esbuild": "^0.28.0",
     "eslint": "^10.2.0",
     "globals": "^17.4.0",
@@ -70,6 +72,6 @@
     "postcss": "^8.5.6"
   },
   "dependencies": {
-    "sort-css-media-queries": "^3.0.3"
+    "sort-css-media-queries": "^3.0.5"
   }
 }

@@ -1,6 +1,6 @@
-'use strict';
+"use strict";
 
-const mod = require('./index.cjs');
+const mod = require("./index.cjs");
 
 const plugin = mod.default;
 

@@ -8,7 +8,7 @@ CI](https://github.com/yunusga/postcss-sort-media-queries/actions/workflows/test
 
 <img src="logo.svg?sanitize=true" align="right" title="PostCSS sort media queries logotype" width="100" height="100">
 
-🌏 [**English**](README.md) ▫ **O'zbek**
+🌏 [**English**](README.md) ▫ **O'zbek** ▫ [**简体中文**](README-ZH.md)
 
 [PostCSS](https://github.com/postcss/postcss) plagini CSS **media
 so'rovlarini tartiblash va birlashtirish** uchun mo'ljallangan.
@@ -20,28 +20,28 @@ tartibga keltirishga yordam beradi.
 > v6.0.0 versiyasidan boshlab plagin **nested (ichma-ich) media
 > so'rovlarini** va **ESM modul formatini** qo'llab-quvvatlaydi.
 
-------------------------------------------------------------------------
+---
 
 ## Mundarija
 
--   [Onlayn demo](#onlayn-demo)
--   [Misollar](#misollar)
-    -   [Mobile first tartiblash](#mobile-first-tartiblash)
-    -   [Desktop first tartiblash](#desktop-first-tartiblash)
-    -   [Ichma-ich media so'rovlarini
-        tartiblash](#ichma-ich-media-sorovlarini-tartiblash)
--   [O'rnatish](#ornatish)
--   [Foydalanish](#foydalanish)
--   [Opsiyalar](#opsiyalar)
-    -   [sort](#sort)
-    -   [Maxsus tartiblash funksiyasi](#maxsus-tartiblash-funksiyasi)
-    -   [Tartiblash konfiguratsiyasi](#tartiblash-konfiguratsiyasi)
--   [O'zgarishlar jurnali](#ozgarishlar-jurnali)
--   [Litsenziya](#litsenziya)
--   [Boshqa PostCSS plaginlari](#boshqa-postcss-plaginlari)
--   [Rahmat](#rahmat)
+- [Onlayn demo](#onlayn-demo)
+- [Misollar](#misollar)
+  - [Mobile first tartiblash](#mobile-first-tartiblash)
+  - [Desktop first tartiblash](#desktop-first-tartiblash)
+  - [Ichma-ich media so'rovlarini
+    tartiblash](#ichma-ich-media-sorovlarini-tartiblash)
+- [O'rnatish](#ornatish)
+- [Foydalanish](#foydalanish)
+- [Opsiyalar](#opsiyalar)
+  - [sort](#sort)
+  - [Maxsus tartiblash funksiyasi](#maxsus-tartiblash-funksiyasi)
+  - [Tartiblash konfiguratsiyasi](#tartiblash-konfiguratsiyasi)
+- [O'zgarishlar jurnali](#ozgarishlar-jurnali)
+- [Litsenziya](#litsenziya)
+- [Boshqa PostCSS plaginlari](#boshqa-postcss-plaginlari)
+- [Rahmat](#rahmat)
 
-------------------------------------------------------------------------
+---
 
 ## Onlayn demo
 
@@ -49,7 +49,7 @@ Plaginning ishlashini brauzerda sinab ko'rishingiz mumkin:
 
 👉 [Online Demo](https://yunusga.uz/postcss-sort-media-queries/)
 
-------------------------------------------------------------------------
+---
 
 ## Misollar
 
@@ -57,92 +57,126 @@ Plaginning ishlashini brauzerda sinab ko'rishingiz mumkin:
 
 **Oldin**
 
-``` css
-@media (min-width: 1400px) {}
-@media (min-width: 1200px) {}
+```css
+@media (min-width: 1400px) {
+}
+@media (min-width: 1200px) {
+}
 
 @layer reset {
-
   @media (min-width: 1200px) {
-    @media (min-width: 992px) {}
-    @media (min-width: 768px) {}
+    @media (min-width: 992px) {
+    }
+    @media (min-width: 768px) {
+    }
   }
 
   @media (min-width: 768px) {
-    @media (min-width: 640px) {}
-    @media (min-width: 320px) {}
+    @media (min-width: 640px) {
+    }
+    @media (min-width: 320px) {
+    }
   }
 }
 ```
 
 **Keyin**
 
-``` css
+```css
 @layer reset {
-
   @media (min-width: 768px) {
-    @media (min-width: 320px) {}
-    @media (min-width: 640px) {}
+    @media (min-width: 320px) {
+    }
+    @media (min-width: 640px) {
+    }
   }
 
   @media (min-width: 1200px) {
-    @media (min-width: 768px) {}
-    @media (min-width: 992px) {}
+    @media (min-width: 768px) {
+    }
+    @media (min-width: 992px) {
+    }
   }
 }
 
-@media (min-width: 1200px) {}
-@media (min-width: 1400px) {}
+@media (min-width: 1200px) {
+}
+@media (min-width: 1400px) {
+}
 ```
 
-------------------------------------------------------------------------
+---
 
 ### Desktop first tartiblash
 
 **Oldin**
 
-``` css
+```css
 @media screen and (width < 640px) {
-  .header { color: #cdcdcd }
+  .header {
+    color: #cdcdcd;
+  }
 }
 @media screen and (min-width: 760px) {
-  .desktop-first { color: #cdcdcd }
+  .desktop-first {
+    color: #cdcdcd;
+  }
 }
 @media screen and (width < 640px) {
-  .main { color: #cdcdcd }
+  .main {
+    color: #cdcdcd;
+  }
 }
 @media screen and (min-width: 1280px) {
-  .desktop-first { color: #cdcdcd }
+  .desktop-first {
+    color: #cdcdcd;
+  }
 }
 @media screen and (max-width: 760px) {
-  .footer { color: #cdcdcd }
+  .footer {
+    color: #cdcdcd;
+  }
 }
 @media screen and (max-width: 640px) {
-  .footer { color: #cdcdcd }
+  .footer {
+    color: #cdcdcd;
+  }
 }
 ```
 
 **Keyin**
 
-``` css
+```css
 @media screen and (max-width: 760px) {
-  .footer { color: #cdcdcd }
+  .footer {
+    color: #cdcdcd;
+  }
 }
 @media screen and (width < 640px) {
   /* combined */
-  .header { color: #cdcdcd }
-  .main { color: #cdcdcd }
-  .footer { color: #cdcdcd }
+  .header {
+    color: #cdcdcd;
+  }
+  .main {
+    color: #cdcdcd;
+  }
+  .footer {
+    color: #cdcdcd;
+  }
 }
 @media screen and (min-width: 760px) {
-  .desktop-first { color: #cdcdcd }
+  .desktop-first {
+    color: #cdcdcd;
+  }
 }
 @media screen and (min-width: 1280px) {
-  .desktop-first { color: #cdcdcd }
+  .desktop-first {
+    color: #cdcdcd;
+  }
 }
 ```
 
-------------------------------------------------------------------------
+---
 
 ## O'rnatish
 
@@ -150,30 +184,30 @@ Avvalo modulni o'rnating:
 
     npm install postcss postcss-sort-media-queries --save-dev
 
-------------------------------------------------------------------------
+---
 
 ## Foydalanish
 
 Loyihangizda mavjud **PostCSS konfiguratsiyasini** tekshiring:
 
--   `postcss.config.js`
--   `package.json` ichidagi `"postcss"` bo'limi
--   yoki bundler konfiguratsiyasi
+- `postcss.config.js`
+- `package.json` ichidagi `"postcss"` bo'limi
+- yoki bundler konfiguratsiyasi
 
 ### Import qilish
 
-``` js
+```js
 // CJS
-let sortCssMq = require('postcss-sort-media-queries');
+let sortCssMq = require("postcss-sort-media-queries");
 
 // ESM
-import sortCssMq from 'postcss-sort-media-queries';
+import sortCssMq from "postcss-sort-media-queries";
 ```
 
 Agar siz allaqachon PostCSS ishlatayotgan bo'lsangiz, plaginni `plugins`
 ro'yxatiga qo'shing:
 
-``` diff
+```diff
 module.exports = {
   plugins: [
 +   require('postcss-sort-media-queries')({
@@ -186,7 +220,7 @@ module.exports = {
 
 Yoki **maxsus tartiblash funksiyasi** bilan:
 
-``` diff
+```diff
 module.exports = {
   plugins: [
 +   require('postcss-sort-media-queries')({
@@ -203,7 +237,7 @@ Agar siz PostCSS ishlatmasangiz, uni [official
 docs](https://github.com/postcss/postcss#usage) bo'yicha o'rnatib, ushbu
 plaginni konfiguratsiyaga qo'shing.
 
-------------------------------------------------------------------------
+---
 
 ## Opsiyalar
 
@@ -215,41 +249,41 @@ plaginni konfiguratsiyaga qo'shing.
 
 Ushbu parametr **string** yoki **function** qiymatlarini qabul qiladi.
 
--   `{string}` `'mobile-first'` --- (standart) mobile-first tartiblash
--   `{string}` `'desktop-first'` --- desktop-first tartiblash
--   `{function}` --- o'zingiz yozgan tartiblash funksiyasi
+- `{string}` `'mobile-first'` --- (standart) mobile-first tartiblash
+- `{string}` `'desktop-first'` --- desktop-first tartiblash
+- `{function}` --- o'zingiz yozgan tartiblash funksiyasi
 
 #### mobile-first
 
-``` js
+```js
 postcss([
   sortMediaQueries({
-    sort: 'mobile-first'
-  })
+    sort: "mobile-first",
+  }),
 ]).process(css);
 ```
 
 #### desktop-first
 
-``` js
+```js
 postcss([
   sortMediaQueries({
-    sort: 'desktop-first'
-  })
+    sort: "desktop-first",
+  }),
 ]).process(css);
 ```
 
-------------------------------------------------------------------------
+---
 
 ### Maxsus tartiblash funksiyasi
 
-``` js
+```js
 postcss([
   sortMediaQueries({
     function(a, b) {
       return a.localeCompare(b);
-    }
-  })
+    },
+  }),
 ]).process(css);
 ```
 
@@ -258,20 +292,20 @@ saralanadi.
 
 Funksiya to'g'ridan-to'g'ri `Array.sort()` metodiga uzatiladi.
 
-------------------------------------------------------------------------
+---
 
 ### Tartiblash konfiguratsiyasi
 
 Ushbu konfiguratsiya orqali tartiblash xatti-harakatini boshqarishingiz
 mumkin.
 
-``` js
+```js
 postcss([
   sortMediaQueries({
     configuration: {
-      unitlessMqAlwaysFirst: true
-    }
-  })
+      unitlessMqAlwaysFirst: true,
+    },
+  }),
 ]).process(css);
 ```
 
@@ -280,34 +314,34 @@ mumkin.
 
 Shuningdek `package.json` ichida ham sozlash mumkin:
 
-``` json
+```json
 {
   "sortCssMQ": {}
 }
 ```
 
-------------------------------------------------------------------------
+---
 
 ## O'zgarishlar jurnali
 
 Qarang: [Releases
 history](https://github.com/yunusga/postcss-sort-media-queries/blob/master/CHANGELOG.md)
 
-------------------------------------------------------------------------
+---
 
 ## Litsenziya
 
 [MIT](https://github.com/yunusga/postcss-sort-media-queries/blob/master/LICENSE)
 
-------------------------------------------------------------------------
+---
 
 ## Boshqa PostCSS plaginlari
 
--   [`postcss-momentum-scrolling`](https://github.com/solversgroup/postcss-momentum-scrolling)
-    --- iOS qurilmalarida overflow (`scroll`, `auto`) elementlari uchun
-    **momentum scrolling** qo'shadi.
+- [`postcss-momentum-scrolling`](https://github.com/solversgroup/postcss-momentum-scrolling)
+  --- iOS qurilmalarida overflow (`scroll`, `auto`) elementlari uchun
+  **momentum scrolling** qo'shadi.
 
-------------------------------------------------------------------------
+---
 
 ## Rahmat
 

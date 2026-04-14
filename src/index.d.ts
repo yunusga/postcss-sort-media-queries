@@ -1,6 +1,9 @@
-import { Plugin } from 'postcss';
+import { Plugin } from "postcss";
 
-type SortOption = 'mobile-first' | 'desktop-first' | ((a: string, b: string) => number);
+type SortOption =
+  | "mobile-first"
+  | "desktop-first"
+  | ((a: string, b: string) => number);
 
 interface Options {
   sort?: SortOption;
@@ -11,4 +14,4 @@ interface Options {
 
 declare const plugin: (options?: Options) => Plugin;
 
-export = plugin;
+export default plugin;
