@@ -68,7 +68,6 @@
     "vitest": "^4.1.2"
   },
   "peerDependencies": {
-    "nanoid": "^5.1.6",
     "postcss": "^8.5.6"
   },
   "dependencies": {
