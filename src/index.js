@@ -1,5 +1,4 @@
 import createSort from "sort-css-media-queries/create-sort";
-import { nanoid } from "nanoid";
 
 // PostCSS plugin to sort CSS @media rules according to a configurable order.
 // The plugin groups top-level and nested media at-rules, merges rules
@@ -46,37 +45,27 @@ function plugin(options = {}) {
       // Collect parent nodes that contain media at-rules. We separate
       // top-level (`root`) parents from nested parents so ordering
       // semantics can be preserved independently.
-      let parents = [];
+      const parents = new Map();
 
       // Walk all @media at-rules and group their parents
       root.walkAtRules("media", (atRule) => {
-        if (!atRule.parent.groupId) {
-          let groupId = nanoid();
-
-          atRule.parent.groupId = groupId;
-
-          parents[groupId] = {
+        if (!parents.has(atRule.parent)) {
+          parents.set(atRule.parent, {
             parent: atRule.parent,
             depth: getDepth(atRule.parent),
-          };
+          });
         }
-
-        return;
       });
 
-      if (!parents) {
+      if (parents.size === 0) {
         return;
       }
 
-      parents = Object.fromEntries(
-        Object.entries(parents).sort(([, a], [, b]) => {
-          return b.depth - a.depth;
-        }),
-      );
+      const sortedParents = [...parents.values()].sort((a, b) => {
+        return b.depth - a.depth;
+      });
 
-      Object.keys(parents).forEach((groupId) => {
-        let { parent } = parents[groupId];
-
+      sortedParents.forEach(({ parent }) => {
         // Filter only @media nodes from the parent's children
         let medias = parent.nodes.filter(
           (node) => node.type === "atrule" && node.name === "media",
