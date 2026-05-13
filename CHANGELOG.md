@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [6.6.0] 2026-05-13
+
+- Remove unnecessary nanoid peerDependency
+
 ## [6.5.0] 2026-04-14
 
 - Update the files field in package.json to point to the correct directory.
