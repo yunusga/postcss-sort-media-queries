@@ -35,6 +35,7 @@
   "type": "module",
   "main": "src/index.js",
   "module": "src/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
