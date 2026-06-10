@@ -356,3 +356,4 @@ Quyidagi insonlar loyiha rivojiga hissa qo'shgan:
 - ReindDooyeweerd [@ReindDooyeweerd](https://github.com/ReindDooyeweerd)
 - msev [@msev](https://github.com/msev)
 - ajiho [@ajiho](https://github.com/ajiho)
+- itosa-kazu [@itosa-kazu](https://github.com/itosa-kazu)
