@@ -59,14 +59,14 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@vitest/coverage-v8": "^4.1.2",
+    "@vitest/coverage-v8": "^4.1.8",
     "cpy-cli": "^7.0.0",
     "esbuild": "^0.28.0",
-    "eslint": "^10.2.0",
-    "globals": "^17.4.0",
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0",
     "husky": "^9.1.7",
-    "prettier": "3.8.1",
-    "vitest": "^4.1.2"
+    "prettier": "3.8.4",
+    "vitest": "^4.1.8"
   },
   "peerDependencies": {
     "postcss": "^8.5.6"
